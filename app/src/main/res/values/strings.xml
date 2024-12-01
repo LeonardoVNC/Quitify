@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NoodleNetworkPlus</string>
+    <string name="countMessage">Tiempo libre de adicción</string>
+    <string name="countYear">Años</string>
+    <string name="countMonth">Meses</string>
+    <string name="countDay">Días</string>
+    <string name="countHour">Horas</string>
+    <string name="countMinute">Minutos</string>
+    <string name="countSecond">Segundos</string>
 </resources>
