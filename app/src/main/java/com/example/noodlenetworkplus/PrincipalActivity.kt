@@ -1,6 +1,8 @@
 package com.example.noodlenetworkplus
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
@@ -8,6 +10,8 @@ import java.time.LocalDateTime
 
 class PrincipalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPrincipalBinding
+    private val handler = Handler(Looper.getMainLooper())
+    private lateinit var runnable: Runnable
 
     private val beginDate: LocalDateTime = LocalDateTime.of(2024, 4, 17, 8,21,0)
     //private val beginDate: LocalDateTime = LocalDateTime.of(2024, 5, 19, 21,23,0)
@@ -25,13 +29,20 @@ class PrincipalActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        calcularTiempoTranscurrido(LocalDateTime.now())
-        actualizarContador()
-
-        binding.buttonMenu.setOnClickListener{
-            binding.testButton.text = "Funciona"
-            //binding.progressBar.progress++
+        runnable = object : Runnable {
+            override fun run() {
+                actualizarContador()
+                handler.postDelayed(this, 1000)
+            }
         }
+        calcularTiempoTranscurrido(LocalDateTime.now())
+        visibilidadContador()
+        runnable.run()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(runnable)
     }
 
     fun calcularTiempoTranscurrido (actualDate: LocalDateTime) {
@@ -69,33 +80,72 @@ class PrincipalActivity : AppCompatActivity() {
         timerYears = year-beginDate.year
     }
 
-    fun actualizarContador() {
+    private fun mostrarContador() {
         binding.textViewCountSecond.text = " $timerSeconds ${getString(R.string.countSecond)}"
         binding.progressBarCountSecond.progress = timerSeconds
-        if(timerMinutes>0) {
-            binding.textViewCountMinute.text = " $timerMinutes ${getString(R.string.countMinute)}"
-            binding.counterMinute.visibility = View.VISIBLE
-            binding.progressBarCountMinute.progress = timerMinutes
-        }
-        if(timerHours>0) {
-            binding.textViewCountHour.text = " $timerHours ${getString(R.string.countHour)}"
-            binding.counterHour.visibility = View.VISIBLE
-            binding.progressBarCountHour.progress = timerHours
-        }
-        if(timerDays>0) {
-            binding.textViewCountDay.text = " $timerDays ${getString(R.string.countDay)}"
-            binding.counterDay.visibility = View.VISIBLE
-            binding.progressBarCountDay.progress = timerDays
-        }
-        if(timerMonths>0) {
-            binding.textViewCountMonth.text = " $timerMonths ${getString(R.string.countMonth)}"
-            binding.counterMonth.visibility = View.VISIBLE
-            binding.progressBarCountMonth.progress = timerMonths
-        }
+        binding.textViewCountMinute.text = " $timerMinutes ${getString(R.string.countMinute)}"
+        binding.progressBarCountMinute.progress = timerMinutes
+        binding.textViewCountHour.text = " $timerHours ${getString(R.string.countHour)}"
+        binding.progressBarCountHour.progress = timerHours
+        binding.textViewCountDay.text = " $timerDays ${getString(R.string.countDay)}"
+        binding.progressBarCountDay.progress = timerDays
+        binding.textViewCountMonth.text = " $timerMonths ${getString(R.string.countMonth)}"
+        binding.progressBarCountMonth.progress = timerMonths
+        binding.textViewCountYear.text = " $timerYears ${getString(R.string.countYear)}"
+        binding.progressBarCountYear.progress = timerYears
+    }
+
+    private fun visibilidadContador() {
         if(timerYears>0) {
-            binding.textViewCountYear.text = " $timerYears ${getString(R.string.countYear)}"
             binding.counterYear.visibility = View.VISIBLE
-            binding.progressBarCountYear.progress = timerYears
+            binding.counterMonth.visibility = View.VISIBLE
+            binding.counterDay.visibility = View.VISIBLE
+            binding.counterHour.visibility = View.VISIBLE
+            binding.counterMinute.visibility = View.VISIBLE
+        } else if (timerMonths>0) {
+            binding.counterMonth.visibility = View.VISIBLE
+            binding.counterDay.visibility = View.VISIBLE
+            binding.counterHour.visibility = View.VISIBLE
+            binding.counterMinute.visibility = View.VISIBLE
+        } else if (timerDays>0){
+            binding.counterDay.visibility = View.VISIBLE
+            binding.counterHour.visibility = View.VISIBLE
+            binding.counterMinute.visibility = View.VISIBLE
+        } else if (timerHours>0) {
+            binding.counterHour.visibility = View.VISIBLE
+            binding.counterMinute.visibility = View.VISIBLE
+        } else if (timerMinutes>0) {
+            binding.counterMinute.visibility = View.VISIBLE
         }
+    }
+
+    private fun actualizarContador() {
+        timerSeconds++
+        if (timerSeconds == 60) {
+            timerSeconds = 0
+            timerMinutes++
+            binding.counterMinute.visibility = View.VISIBLE
+        }
+        if (timerMinutes == 60) {
+            timerMinutes = 0
+            timerHours++
+            binding.counterHour.visibility = View.VISIBLE
+        }
+        if (timerHours == 24) {
+            timerHours = 0
+            timerDays++
+            binding.counterDay.visibility = View.VISIBLE
+        }
+        if (timerDays == 30) {
+            timerDays = 0
+            timerMonths++
+            binding.counterMonth.visibility = View.VISIBLE
+        }
+        if (timerMonths == 12) {
+            timerMonths = 0
+            timerYears++
+            binding.counterYear.visibility = View.VISIBLE
+        }
+        mostrarContador()
     }
 }
