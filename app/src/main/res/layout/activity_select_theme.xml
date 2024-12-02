@@ -31,8 +31,6 @@
                 app:tint="?attr/editTextColor" />
         </LinearLayout>
 
-        <!-- Menú superior -->
-
         <!-- Contenido principal -->
         <TextView
             android:id="@+id/select_theme_description"
@@ -165,6 +163,7 @@
                             android:backgroundTint="@android:color/transparent"/>
                     </LinearLayout>
 
+                    <!-- Agregue nuevos temas aqui -->
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -172,7 +171,6 @@
         <!-- Menú inferior -->
         <LinearLayout
             android:id="@+id/select_theme_lower_menu"
-            android:theme="@style/Theme.DarkTur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -195,14 +193,17 @@
                     android:textStyle="italic|bold"
                     android:textSize="18sp"/>
                 <TextView
+                    android:id="@+id/select_theme_desc_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/theme_dark_tur"
+                    android:visibility="gone"
                     android:backgroundTint="@android:color/transparent"
                     android:textStyle="italic|bold"
                     android:textSize="16sp"/>
             </LinearLayout>
 
+            <!-- Boton de guardado -->
             <Button
                 android:id="@+id/select_theme_button_save"
                 android:layout_weight="1"
@@ -210,8 +211,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save_themes"/>
         </LinearLayout>
-
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 

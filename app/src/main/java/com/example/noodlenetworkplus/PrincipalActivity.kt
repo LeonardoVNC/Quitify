@@ -1,5 +1,6 @@
 package com.example.noodlenetworkplus
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
 
-class PrincipalActivity : AppCompatActivity() {
+class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
@@ -53,6 +54,13 @@ class PrincipalActivity : AppCompatActivity() {
             binding.counterHour.visibility = View.GONE
             binding.counterMinute.visibility = View.GONE
             mostrarContador()
+        }
+
+        binding.buttonMenu.setOnClickListener{
+            //TODO este botón debe desplegar un menú, dentro de este menú se podrá entrar a configuraciones y a su
+            // vez al selector de temas, esta conexión es temporal
+            val intent = Intent(this, SelectThemeActivity::class.java)
+            startActivity(intent)
         }
 
         binding.principalButtonTask.setOnClickListener{
