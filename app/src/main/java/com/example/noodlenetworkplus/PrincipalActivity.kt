@@ -13,7 +13,7 @@ class PrincipalActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
 
-    private val beginDate: LocalDateTime = LocalDateTime.of(2024, 4, 17, 8,21,0)
+    private var beginDate: LocalDateTime = LocalDateTime.of(2024, 4, 17, 8,21,0)
     //private val beginDate: LocalDateTime = LocalDateTime.of(2024, 5, 19, 21,23,0)
 
     private var timerSeconds: Int = 0;
@@ -38,6 +38,31 @@ class PrincipalActivity : AppCompatActivity() {
         calcularTiempoTranscurrido(LocalDateTime.now())
         visibilidadContador()
         runnable.run()
+
+        binding.buttonReset.setOnClickListener{
+            beginDate = LocalDateTime.now()
+            timerSeconds= 0;
+            timerMinutes= 0;
+            timerHours= 0;
+            timerDays= 0;
+            timerMonths= 0;
+            timerYears= 0;
+            binding.counterYear.visibility = View.GONE
+            binding.counterMonth.visibility = View.GONE
+            binding.counterDay.visibility = View.GONE
+            binding.counterHour.visibility = View.GONE
+            binding.counterMinute.visibility = View.GONE
+            mostrarContador()
+        }
+
+        binding.principalButtonTask.setOnClickListener{
+            //TODO implementar intent a la pantalla de Recomendaciones/Tareas
+            println("Boton Recomendaciones Presionado")
+        }
+        binding.principalButtonCommunity.setOnClickListener{
+            //TODO implementar intent a la pantalla de Comunidad
+            println("Boton Comunidad Presionado")
+        }
     }
 
     override fun onDestroy() {

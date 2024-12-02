@@ -8,202 +8,296 @@
     android:layout_height="match_parent"
     tools:context=".PrincipalActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <!-- Menú superior -->
         <LinearLayout
+            android:id="@+id/principal_upper_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:padding="10dp"
+            android:layout_alignParentTop="true"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/button_menu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/menu3"
                 app:tint="?attr/editTextColor" />
 
         </LinearLayout>
 
-        <!-- Contador y control de Tiempo -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Contenido de Principal -->
+        <ScrollView
+            android:id="@+id/principal_middle_view"
+            android:layout_below="@id/principal_upper_menu"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="?attr/colorSurface"
-            android:padding="25dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
+            android:layout_marginBottom="55dp">
 
-            <TextView
-                android:id="@+id/textViewCountMessage"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/countMessage"
-                android:textSize="14sp"
-                android:textStyle="italic"
-                android:background="@android:color/transparent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                />
+                android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/counterYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:visibility="gone">
-                <ProgressBar
-                    android:id="@+id/progressBarCountYear"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
+                <!-- Contador y control de Tiempo -->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="10"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountYear"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/countYear"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/counterMonth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:visibility="gone">
-                <ProgressBar
-                    android:id="@+id/progressBarCountMonth"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
+                    android:background="?attr/colorSurface"
+                    android:padding="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewCountMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/countMessage"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <FrameLayout
+                        android:id="@+id/counterYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/progressBarCountYear"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="10"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countYear"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/counterMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/progressBarCountMonth"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="12"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countMonth"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/counterDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/progressBarCountDay"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="30"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countDay"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/counterHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/progressBarCountHour"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="24"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountHour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countHour"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/counterMinute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/progressBarCountMinute"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="60"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountMinute"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countMinute"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:id="@+id/counterSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        >
+                        <ProgressBar
+                            android:id="@+id/progressBarCountSecond"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressDrawable="@drawable/my_progress_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:max="60"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/textViewCountSecond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countSecond"
+                            android:textSize="22sp"
+                            android:textStyle="bold|italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            />
+                    </FrameLayout>
+
+                    <!-- Boton de Reinicio -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center">
+                        <ImageButton
+                            android:id="@+id/buttonReset"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/reset_time"
+                            android:background="@android:color/transparent"
+                            app:tint="?attr/editTextColor"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:id="@+id/textButtonReset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/buttonReset"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"
+                            android:textStyle="italic"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Sección de Mensaje motivacional -->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="12"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountMonth"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/countMonth"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/counterDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:visibility="gone">
-                <ProgressBar
-                    android:id="@+id/progressBarCountDay"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="30"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/countDay"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/counterHour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:visibility="gone">
-                <ProgressBar
-                    android:id="@+id/progressBarCountHour"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="24"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountHour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/countHour"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/counterMinute"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:visibility="gone">
-                <ProgressBar
-                    android:id="@+id/progressBarCountMinute"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="60"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountMinute"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/countMinute"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/counterSecond"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                >
-                <ProgressBar
-                    android:id="@+id/progressBarCountSecond"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progressDrawable="@drawable/my_progress_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:max="60"
-                    android:progress="0" />
-                <TextView
-                    android:id="@+id/textViewCountSecond"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/countSecond"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center_vertical"
-                    />
-            </FrameLayout>
+                    android:background="?attr/colorSurface"
+                    android:padding="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/firstMotivation"
+                        android:gravity="center"
+                        android:textSize="26sp"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="italic"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Menú inferior -->
+        <LinearLayout
+            android:id="@+id/principal_lower_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="?attr/colorSecondary"
+            android:padding="10dp">
+            <ImageButton
+                android:id="@+id/principal_button_task"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/task_check"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:tint="?attr/editTextColor"/>
+            <ImageButton
+                android:id="@+id/principal_button_community"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/community"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:tint="?attr/editTextColor"/>
         </LinearLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

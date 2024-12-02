@@ -7,4 +7,6 @@
     <string name="countHour">Horas</string>
     <string name="countMinute">Minutos</string>
     <string name="countSecond">Segundos</string>
+    <string name="buttonReset">Reiniciar Tiempo</string>
+    <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
 </resources>
