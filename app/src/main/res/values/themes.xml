@@ -11,6 +11,7 @@
         <item name="colorAccent">#FFC107</item>
         <item name="android:background">#F6E7D5</item>
         <item name="colorSurface">#F1DFC9</item>
+        <item name="android:statusBarColor">?attr/colorSecondary</item>
     </style>
 
     <style name="Theme.Dark" parent="Theme.Material3.Dark.NoActionBar">
@@ -18,12 +19,15 @@
         <item name="android:editTextColor">#FFFFFF</item>
         <item name="android:textColorHint">#A9A9A9</item>
         <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
 
         <item name="colorPrimary">#404040</item>
         <item name="colorSecondary">#AAAAAA</item>
         <item name="colorAccent">#03A9F4</item>
         <item name="android:background">#181818</item>
         <item name="colorSurface">#282828</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
     </style>
 
     <style name="Theme.DarkTur" parent="Theme.Dark">

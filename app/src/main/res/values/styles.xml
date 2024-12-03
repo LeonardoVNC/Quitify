@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo usado para la Barra de Progreso tipo Contador -->
+    <style name="CountProgresBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/my_progress_bar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <!-- Estilo usado para texto destacado -->
+    <style name="SubtitleText">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>
