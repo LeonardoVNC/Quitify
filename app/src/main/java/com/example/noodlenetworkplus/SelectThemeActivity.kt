@@ -1,5 +1,6 @@
 package com.example.noodlenetworkplus
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -47,7 +48,9 @@ class SelectThemeActivity : BaseActivity() {
 
         binding.selectThemeButtonSave.setOnClickListener {
             sharedPreferences.edit().putInt("selected_theme", tema).apply()
-            recreate()
+            val intent = Intent(this, PrincipalActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
 
         binding.selectThemeButtonBack.setOnClickListener { onBackPressed() }
