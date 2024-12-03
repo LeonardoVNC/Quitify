@@ -34,14 +34,12 @@
         <!-- Contenido principal -->
         <TextView
             android:id="@+id/select_theme_description"
+            style="@style/SubtitleText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_below="@id/select_theme_upper_menu"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="@string/desc_themes"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textStyle="italic|bold" />
+            android:gravity="center" />
 
         <ScrollView
             android:id="@+id/select_theme_middle_view"
@@ -77,7 +75,7 @@
                             android:id="@+id/select_theme_button_dark_tur"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/round_square"
+                            android:src="@drawable/checked_box"
                             android:backgroundTint="@android:color/transparent"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -102,7 +100,7 @@
                             android:id="@+id/select_theme_button_dark_purple"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/round_square"
+                            android:src="@drawable/checked_box"
                             android:backgroundTint="@android:color/transparent"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -127,7 +125,7 @@
                             android:id="@+id/select_theme_button_dark"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/round_square"
+                            android:src="@drawable/checked_box"
                             android:backgroundTint="@android:color/transparent"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -152,7 +150,7 @@
                             android:id="@+id/select_theme_button_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/round_square"
+                            android:src="@drawable/checked_box"
                             android:backgroundTint="@android:color/transparent"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -190,8 +188,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/desc_save_theme"
                     android:backgroundTint="@android:color/transparent"
-                    android:textStyle="italic|bold"
-                    android:textSize="18sp"/>
+                    android:textStyle="italic|bold"/>
                 <TextView
                     android:id="@+id/select_theme_desc_save"
                     android:layout_width="wrap_content"
@@ -199,8 +196,7 @@
                     android:text="@string/theme_dark_tur"
                     android:visibility="gone"
                     android:backgroundTint="@android:color/transparent"
-                    android:textStyle="italic|bold"
-                    android:textSize="16sp"/>
+                    android:textStyle="italic|bold"/>
             </LinearLayout>
 
             <!-- Boton de guardado -->
