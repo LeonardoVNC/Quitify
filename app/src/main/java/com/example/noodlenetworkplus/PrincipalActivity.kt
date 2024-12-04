@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 
 class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
@@ -23,6 +24,7 @@ class PrincipalActivity : BaseActivity() {
     private var timerDays: Int = 0;
     private var timerMonths: Int = 0;
     private var timerYears: Int = 0;
+    private var totalDays: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,20 +42,12 @@ class PrincipalActivity : BaseActivity() {
         visibilidadContador()
         runnable.run()
 
+        binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
         binding.buttonReset.setOnClickListener{
-            beginDate = LocalDateTime.now()
-            timerSeconds= 0;
-            timerMinutes= 0;
-            timerHours= 0;
-            timerDays= 0;
-            timerMonths= 0;
-            timerYears= 0;
-            binding.counterYear.visibility = View.GONE
-            binding.counterMonth.visibility = View.GONE
-            binding.counterDay.visibility = View.GONE
-            binding.counterHour.visibility = View.GONE
-            binding.counterMinute.visibility = View.GONE
-            mostrarContador()
+            //TODO Ventana emergente para confirmar el reinicio, evita reinicios involuntarios
+            // si es que confirma:
+            reiniciarTiempo()
+            // si no, no pasa nada
         }
 
         binding.buttonMenu.setOnClickListener{
@@ -111,6 +105,7 @@ class PrincipalActivity : BaseActivity() {
         timerDays = day-beginDate.dayOfMonth
         timerMonths = month-beginDate.monthValue
         timerYears = year-beginDate.year
+        totalDays = ChronoUnit.DAYS.between(beginDate, LocalDateTime.now()).toInt()
     }
 
     private fun mostrarContador() {
@@ -158,27 +153,46 @@ class PrincipalActivity : BaseActivity() {
             timerSeconds = 0
             timerMinutes++
             binding.counterMinute.visibility = View.VISIBLE
+            if (timerMinutes == 60) {
+                timerMinutes = 0
+                timerHours++
+                binding.counterHour.visibility = View.VISIBLE
+                if (timerHours == 24) {
+                    timerHours = 0
+                    timerDays++
+                    totalDays++
+                    binding.counterDay.visibility = View.VISIBLE
+                    if (timerDays == 30) {
+                        timerDays = 0
+                        timerMonths++
+                        binding.counterMonth.visibility = View.VISIBLE
+                        if (timerMonths == 12) {
+                            timerMonths = 0
+                            timerYears++
+                            binding.counterYear.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
         }
-        if (timerMinutes == 60) {
-            timerMinutes = 0
-            timerHours++
-            binding.counterHour.visibility = View.VISIBLE
-        }
-        if (timerHours == 24) {
-            timerHours = 0
-            timerDays++
-            binding.counterDay.visibility = View.VISIBLE
-        }
-        if (timerDays == 30) {
-            timerDays = 0
-            timerMonths++
-            binding.counterMonth.visibility = View.VISIBLE
-        }
-        if (timerMonths == 12) {
-            timerMonths = 0
-            timerYears++
-            binding.counterYear.visibility = View.VISIBLE
-        }
+        mostrarContador()
+    }
+
+    fun reiniciarTiempo () {
+        beginDate = LocalDateTime.now()
+        timerSeconds= 0;
+        timerMinutes= 0;
+        timerHours= 0;
+        timerDays= 0;
+        timerMonths= 0;
+        timerYears= 0;
+        binding.counterYear.visibility = View.GONE
+        binding.counterMonth.visibility = View.GONE
+        binding.counterDay.visibility = View.GONE
+        binding.counterHour.visibility = View.GONE
+        binding.counterMinute.visibility = View.GONE
+        totalDays = 0
+        binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
         mostrarContador()
     }
 }

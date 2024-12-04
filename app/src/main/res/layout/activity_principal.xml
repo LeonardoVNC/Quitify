@@ -65,121 +65,162 @@
                         android:layout_marginBottom="10dp"
                         />
 
-                    <FrameLayout
+                    <!-- Contador Años -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterYear"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
                         android:visibility="gone">
-                        <ProgressBar
-                            android:id="@+id/progressBarCountYear"
-                            style="@style/CountProgresBar"
-                            android:max="10"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountYear"
-                            style="@style/SubtitleText"
-                            android:text="@string/countYear"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"/>
-                    </FrameLayout>
-                    <FrameLayout
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCountYear"
+                                style="@style/CountProgresBar"
+                                android:max="10"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountYear"
+                                style="@style/SubtitleText"
+                                android:text="@string/countYear"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"/>
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contador Meses -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterMonth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
                         android:visibility="gone">
-                        <ProgressBar
-                            android:id="@+id/progressBarCountMonth"
-                            style="@style/CountProgresBar"
-                            android:max="12"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountMonth"
-                            style="@style/SubtitleText"
-                            android:text="@string/countMonth"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"/>
-                    </FrameLayout>
-                    <FrameLayout
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCountMonth"
+                                style="@style/CountProgresBar"
+                                android:max="12"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountMonth"
+                                style="@style/SubtitleText"
+                                android:text="@string/countMonth"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"/>
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contador Días -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterDay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
                         android:visibility="gone">
-                        <ProgressBar
-                            android:id="@+id/progressBarCountDay"
-                            style="@style/CountProgresBar"
-                            android:max="30"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountDay"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/countDay"
-                            android:textSize="22sp"
-                            android:textStyle="bold|italic"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"
-                            />
-                    </FrameLayout>
-                    <FrameLayout
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCountDay"
+                                style="@style/CountProgresBar"
+                                android:max="30"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountDay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/countDay"
+                                android:textSize="22sp"
+                                android:textStyle="bold|italic"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"
+                                />
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contador Horas -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterHour"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
                         android:visibility="gone">
-                        <ProgressBar
-                            android:id="@+id/progressBarCountHour"
-                            style="@style/CountProgresBar"
-                            android:max="24"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountHour"
-                            style="@style/SubtitleText"
-                            android:text="@string/countHour"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"
-                            />
-                    </FrameLayout>
-                    <FrameLayout
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCountHour"
+                                style="@style/CountProgresBar"
+                                android:max="24"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountHour"
+                                style="@style/SubtitleText"
+                                android:text="@string/countHour"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"
+                                />
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contador Minutos -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterMinute"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
                         android:visibility="gone">
-                        <ProgressBar
-                            android:id="@+id/progressBarCountMinute"
-                            style="@style/CountProgresBar"
-                            android:max="60"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountMinute"
-                            style="@style/SubtitleText"
-                            android:text="@string/countMinute"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"
-                            />
-                    </FrameLayout>
-                    <FrameLayout
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCountMinute"
+                                style="@style/CountProgresBar"
+                                android:max="60"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountMinute"
+                                style="@style/SubtitleText"
+                                android:text="@string/countMinute"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"
+                                />
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contador Segundos -->
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/counterSecond"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        >
-                        <ProgressBar
-                            android:id="@+id/progressBarCountSecond"
-                            style="@style/CountProgresBar"
-                            android:max="60"
-                            android:progress="0" />
-                        <TextView
-                            android:id="@+id/textViewCountSecond"
-                            style="@style/SubtitleText"
-                            android:text="@string/countSecond"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"
-                            />
-                    </FrameLayout>
+                        app:cardCornerRadius="10dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                            <ProgressBar
+                                android:id="@+id/progressBarCountSecond"
+                                style="@style/CountProgresBar"
+                                android:max="60"
+                                android:progress="0" />
+                            <TextView
+                                android:id="@+id/textViewCountSecond"
+                                style="@style/SubtitleText"
+                                android:text="@string/countSecond"
+                                android:background="@android:color/transparent"
+                                android:layout_gravity="center_vertical"
+                                />
+                        </FrameLayout>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- Boton de Reinicio -->
                     <LinearLayout
@@ -207,6 +248,27 @@
                             android:background="@android:color/transparent"
                             android:layout_gravity="center" />
                     </LinearLayout>
+                </LinearLayout>
+
+                <!-- Contador dias totales -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorSurface"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:layout_marginBottom="15dp">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent">
+                        <TextView
+                            android:id="@+id/principal_text_count_days"
+                            style="@style/SubtitleText"
+                            android:text="@string/countDay"
+                            android:textSize="32sp"
+                            android:background="@android:color/transparent"/>
+                    </FrameLayout>
                 </LinearLayout>
 
                 <!-- Sección de Mensaje motivacional -->
@@ -237,9 +299,18 @@
             android:layout_alignParentBottom="true"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="2"
+            android:weightSum="3"
             android:background="?attr/colorSecondary"
             android:padding="10dp">
+            <ImageButton
+                android:id="@+id/principal_button_time"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/clock_progress"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:tint="?attr/colorAccent"/>
             <ImageButton
                 android:id="@+id/principal_button_task"
                 android:layout_width="40dp"
