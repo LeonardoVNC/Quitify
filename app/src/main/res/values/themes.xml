@@ -5,10 +5,12 @@
         <item name="android:editTextColor">#202020</item>
         <item name="android:textColorHint">#7C7C7C</item>
         <item name="colorOnPrimary">#202020</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
 
         <item name="colorPrimary">#FFB447</item>
-        <item name="colorSecondary">#FFA647</item>
-        <item name="colorAccent">#FFC107</item>
+        <item name="colorSecondary">#F49F45</item>
+        <item name="colorAccent">#FFBF00</item>
         <item name="android:background">#F6E7D5</item>
         <item name="colorSurface">#F1DFC9</item>
         <item name="android:statusBarColor">?attr/colorSecondary</item>
@@ -22,9 +24,9 @@
         <item name="android:textStyle">italic</item>
         <item name="android:textSize">16sp</item>
 
-        <item name="colorPrimary">#404040</item>
+        <item name="colorPrimary">#464646</item>
         <item name="colorSecondary">#AAAAAA</item>
-        <item name="colorAccent">#03A9F4</item>
+        <item name="colorAccent">#3F86B5</item>
         <item name="android:background">#181818</item>
         <item name="colorSurface">#282828</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>
@@ -41,7 +43,7 @@
     <style name="Theme.DarkPurple" parent="Theme.Dark">
         <item name="colorPrimary">#6a1db1</item>
         <item name="colorSecondary">#5B2D86</item>
-        <item name="colorAccent">#7201DC</item>
+        <item name="colorAccent">#8300FF</item>
         <item name="android:background">#2F2B33</item>
         <item name="colorSurface">#462E5C</item>
     </style>
