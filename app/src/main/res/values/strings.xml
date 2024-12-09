@@ -20,4 +20,8 @@
     <string name="showConfirmationContent">No te avergüences de hacerlo. Deberías estar orgulloso de intentarlo.</string>
     <string name="showConfirmationPositive">Reiniciar</string>
     <string name="showConfirmationNegative">Cancelar</string>
+
+    <string name="postAuthor">AutorDeLaPublicación</string>
+    <string name="postDate">Fecha-De-Publicación</string>
+    <string name="postContent">Contenido neto de la publicación.</string>
 </resources>
