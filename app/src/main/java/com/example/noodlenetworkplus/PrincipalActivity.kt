@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
@@ -44,10 +44,7 @@ class PrincipalActivity : BaseActivity() {
 
         binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
         binding.buttonReset.setOnClickListener{
-            //TODO Ventana emergente para confirmar el reinicio, evita reinicios involuntarios
-            // si es que confirma:
-            reiniciarTiempo()
-            // si no, no pasa nada
+            showConfirmarReinicio()
         }
 
         binding.buttonMenu.setOnClickListener{
@@ -194,5 +191,21 @@ class PrincipalActivity : BaseActivity() {
         totalDays = 0
         binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
         mostrarContador()
+    }
+
+    private fun showConfirmarReinicio() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.showConfirmationTitle))
+        builder.setMessage(getString(R.string.showConfirmationContent))
+
+        builder.setPositiveButton(getString(R.string.showConfirmationPositive)) { dialog, which ->
+            reiniciarTiempo()
+        }
+        builder.setNegativeButton(getString(R.string.showConfirmationNegative)) { dialog, which ->
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }

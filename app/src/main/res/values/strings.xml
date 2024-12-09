@@ -16,4 +16,8 @@
     <string name="countSecond">Segundos</string>
     <string name="buttonReset">Reiniciar Tiempo</string>
     <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
+    <string name="showConfirmationTitle">¿Estás seguro que quieres reiniciar el contador?</string>
+    <string name="showConfirmationContent">No te avergüences de hacerlo. Deberías estar orgulloso de intentarlo.</string>
+    <string name="showConfirmationPositive">Reiniciar</string>
+    <string name="showConfirmationNegative">Cancelar</string>
 </resources>
