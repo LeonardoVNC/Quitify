@@ -20,4 +20,8 @@
     <string name="showConfirmationContent">No te avergüences de hacerlo. Deberías estar orgulloso de intentarlo.</string>
     <string name="showConfirmationPositive">Reiniciar</string>
     <string name="showConfirmationNegative">Cancelar</string>
+
+    <string name="configAccount">Detalles de la cuenta</string>
+    <string name="configTheme">Cambiar tema</string>
+    <string name="configCloseAccount">Cerrar sesión</string>
 </resources>

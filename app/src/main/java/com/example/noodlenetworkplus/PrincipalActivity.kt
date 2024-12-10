@@ -48,9 +48,7 @@ class PrincipalActivity : BaseActivity() {
         }
 
         binding.buttonMenu.setOnClickListener{
-            //TODO este botón debe desplegar un menú, dentro de este menú se podrá entrar a configuraciones y a su
-            // vez al selector de temas, esta conexión es temporal
-            val intent = Intent(this, SelectThemeActivity::class.java)
+            val intent = Intent(this, ConfiguracionActivity::class.java)
             startActivity(intent)
         }
 
