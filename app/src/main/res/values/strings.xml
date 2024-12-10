@@ -24,4 +24,13 @@
     <string name="configAccount">Detalles de la cuenta</string>
     <string name="configTheme">Cambiar tema</string>
     <string name="configCloseAccount">Cerrar sesión</string>
+
+    <string name="accountUsername">Username</string>
+    <string name="accountAdic">Adicción</string>
+    <string name="accountDate">17/04/24</string>
+
+    <string name="closeAccountTitle">Cerrar sesión</string>
+    <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
+    <string name="closeAccountPositive">Aceptar</string>
+    <string name="closeAccountNegative">Cancelar</string>
 </resources>
