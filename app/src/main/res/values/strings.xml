@@ -24,4 +24,7 @@
     <string name="postAuthor">AutorDeLaPublicación</string>
     <string name="postDate">Fecha-De-Publicación</string>
     <string name="postContent">Contenido neto de la publicación.</string>
+    <string name="newPostDesc">Publica algo nuevo</string>
+    <string name="newPostHint">¿Qué quieres compartir hoy?</string>
+
 </resources>

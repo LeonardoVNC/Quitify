@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <!-- Menú superior -->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/community_upper_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,24 +22,50 @@
             android:background="?attr/colorPrimary"
             android:padding="10dp"
             android:orientation="horizontal">
-
+            <!-- Botón Menú -->
             <ImageButton
                 android:id="@+id/community_button_menu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/menu3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:tint="?attr/editTextColor" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Contenido de Principal -->
+        <!-- Contenido principal -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/community_recycler_posts"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/community_upper_menu"
             app:layout_constraintBottom_toTopOf="@+id/community_lower_menu"/>
+
+        <!-- Botón agregar publicación -->
+        <ImageView
+            android:id="@+id/community_add_background"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/opacy_circle"
+            app:layout_constraintBottom_toTopOf="@id/community_lower_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorPrimary" />
+        <ImageButton
+            android:id="@+id/community_button_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/add"
+            app:layout_constraintBottom_toBottomOf="@+id/community_add_background"
+            app:layout_constraintEnd_toEndOf="@+id/community_add_background"
+            app:layout_constraintStart_toStartOf="@+id/community_add_background"
+            app:layout_constraintTop_toTopOf="@+id/community_add_background"
+            app:tint="?attr/editTextColor" />
 
         <!-- Menú inferior -->
         <LinearLayout
@@ -52,6 +78,7 @@
             android:weightSum="3"
             android:background="?attr/colorSecondary"
             android:padding="10dp">
+            <!-- Acceso a Pantalla Principal -->
             <ImageButton
                 android:id="@+id/community_button_time"
                 android:layout_width="40dp"
@@ -61,6 +88,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 app:tint="?attr/editTextColor"/>
+            <!-- Acceso a Pantalla Recomendaciones -->
             <ImageButton
                 android:id="@+id/community_button_task"
                 android:layout_width="40dp"
@@ -70,6 +98,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 app:tint="?attr/editTextColor"/>
+            <!-- Acceso a Pantalla Comunidad -->
+            <!-- No tiene efecto presionarlo -->
             <ImageButton
                 android:id="@+id/community_button_community"
                 android:layout_width="40dp"
