@@ -20,10 +20,10 @@ class ForoDeComunidadActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
         //TEST
-        agregarPublicacion("User1", "publicando algo muy seriooo")
-        agregarPublicacion("User2", "publicando algo menos seriooo")
-        agregarPublicacion("User3", "publicando algo nada seriooo")
-        agregarPublicacion("User4", "publicando algo demasiado seriooo")
+        agregarPublicacion("User1", "publicando algo muy seriooo", R.drawable.add)
+        agregarPublicacion("User2", "publicando algo menos seriooo", R.drawable.menu3)
+        agregarPublicacion("User3", "publicando algo nada seriooo", R.drawable.community)
+        agregarPublicacion("User4", "publicando algo demasiado seriooo", R.drawable.arrow_back)
         //TEST
         setUpRecyclerView()
 
@@ -46,11 +46,11 @@ class ForoDeComunidadActivity : BaseActivity() {
         }
     }
 
-    fun agregarPublicacion(usuario: String, contenido: String) {
+    fun agregarPublicacion(usuario: String, contenido: String, idImagen: Int) {
         val post = mutableListOf(Publicacion (
             autor = usuario,
             fechaDePublicacion = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yy")).toString(),
-            contenido = contenido)
+            contenido = contenido, imagen = idImagen)
         )
         post.addAll(listaPublicaciones)
         listaPublicaciones = post
