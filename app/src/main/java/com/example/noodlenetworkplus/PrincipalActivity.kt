@@ -57,8 +57,8 @@ class PrincipalActivity : BaseActivity() {
             println("Boton Recomendaciones Presionado")
         }
         binding.principalButtonCommunity.setOnClickListener{
-            //TODO implementar intent a la pantalla de Comunidad
-            println("Boton Comunidad Presionado")
+            val intent = Intent(this, ForoDeComunidadActivity::class.java)
+            startActivity(intent)
         }
     }
 

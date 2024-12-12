@@ -33,4 +33,17 @@
     <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
     <string name="closeAccountPositive">Aceptar</string>
     <string name="closeAccountNegative">Cancelar</string>
+
+    <string name="postAuthor">AutorDeLaPublicación</string>
+    <string name="postDate">Fecha-De-Publicación</string>
+    <string name="postHour">Hora-De-Publicación</string>
+    <string name="postContent">Contenido neto de la publicación.</string>
+    <string name="newPostDesc">Publica algo nuevo</string>
+    <string name="newPostHint">¿Qué quieres compartir hoy?</string>
+    <string name="newPostHintOnEmpty">No puedes publicar un texto vacío, prueba a compartir algun pensamiento que tengas</string>
+    <string name="newPostCatDescription">¿Qué efecto buscas con esta publicación?</string>
+    <string name="newPostCatSupport">Quiero motivar a los demás</string>
+    <string name="newPostCatCelebration">Quiero compartir un logro</string>
+    <string name="newPostCatSad">Necesito desahogarme un poco</string>
+    <string name="newPostCatOther">Otro</string>
 </resources>
