@@ -27,6 +27,10 @@ class ForoDeComunidadActivity : BaseActivity() {
         setContentView(view)
         setUpRecyclerView()
 
+        binding.communityButtonMenu.setOnClickListener {
+            val intent = Intent(this, ConfiguracionActivity::class.java)
+            startActivity(intent)
+        }
         binding.communityButtonAdd.setOnClickListener {
             val intent = Intent(this, AgregarPostActivity::class.java)
             startActivity(intent)
