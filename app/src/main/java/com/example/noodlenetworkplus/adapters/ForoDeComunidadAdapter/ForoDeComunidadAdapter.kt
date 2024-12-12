@@ -3,7 +3,6 @@ package com.example.noodlenetworkplus.adapters.ForoDeComunidadAdapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.experimental.R
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ItemCommunityPostBinding
@@ -29,6 +28,7 @@ class ForoDeComunidadAdapter: RecyclerView.Adapter<ForoDeComunidadAdapter.PostVi
         fun binding(data: Publicacion){
             binding.postTextAuthor.text = data.autor
             binding.postTextDate.text = data.fechaDePublicacion
+            binding.postTextHour.text = data.horaDePublicacion
             binding.postTextContent.text = data.contenido
             binding.postImageCategory.setImageResource(data.imagen)
         }

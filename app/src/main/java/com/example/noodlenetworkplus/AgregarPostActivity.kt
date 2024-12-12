@@ -9,11 +9,12 @@ import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.gson
 import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ActivityAgregarPostBinding
 import com.google.gson.reflect.TypeToken
-import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class AgregarPostActivity : BaseActivity() {
     private lateinit var binding: ActivityAgregarPostBinding
+    private var categoria: Int = R.drawable.user
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,24 +22,46 @@ class AgregarPostActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.postRadioGroup.setOnCheckedChangeListener { group, checkedID ->
+            when(checkedID) {
+                R.id.post_radio_button_support -> {
+                    categoria = R.drawable.hugging
+                }
+                R.id.post_radio_button_celebration -> {
+                    categoria = R.drawable.celebration
+                }
+                R.id.post_radio_button_sad -> {
+                    categoria = R.drawable.mask_sad
+                }
+                else -> {
+                    categoria = R.drawable.user
+                }
+            }
+        }
         binding.postButtonAdd.setOnClickListener{
-            //TODO Aun es necesario agregar el nombre de usuario y establecer funcionalidad de la imágen
-            agregarPublicacion("test", binding.postEditText.text.toString(), R.drawable.add)
-
-            binding.postEditText.text.clear()
-            val intent = Intent(this, ForoDeComunidadActivity::class.java)
-            startActivity(intent)
+            //TODO Aun es necesario agregar el nombre de usuario
+            val contenido: String = binding.postEditText.text.toString()
+            if (contenido.isNotEmpty()) {
+                agregarPublicacion("test", contenido)
+                binding.postEditText.text.clear()
+                val intent = Intent(this, ForoDeComunidadActivity::class.java)
+                startActivity(intent)
+            } else {
+                binding.postEditText.hint = getString(R.string.newPostHintOnEmpty)
+            }
         }
         binding.postButtonBack.setOnClickListener{onBackPressed()}
     }
 
-    fun agregarPublicacion(usuario: String, contenido: String, idImagen: Int) {
+    fun agregarPublicacion(usuario: String, contenido: String) {
+        val actual: LocalDateTime = LocalDateTime.now()
         val post = mutableListOf(
             Publicacion (
             autor = usuario,
-            fechaDePublicacion = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yy")).toString(),
+            fechaDePublicacion = actual.format(DateTimeFormatter.ofPattern("dd/MM/yy")).toString(),
+            horaDePublicacion = actual.format(DateTimeFormatter.ofPattern("HH:mm")).toString(),
             contenido = contenido,
-            imagen = idImagen
+            imagen = categoria
             )
         )
         post.addAll(cargarPublicaciones())
