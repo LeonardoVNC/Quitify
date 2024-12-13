@@ -40,7 +40,7 @@ class ForoDeComunidadActivity : BaseActivity() {
             startActivity(intent)
         }
         binding.communityButtonTask.setOnClickListener {
-            val intent = Intent(this, ActividadesActivity::class.java)
+            val intent = Intent(this, MenuActividadesActivity::class.java)
             startActivity(intent)
         }
     }

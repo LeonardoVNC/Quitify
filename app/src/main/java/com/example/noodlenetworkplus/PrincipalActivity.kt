@@ -53,7 +53,7 @@ class PrincipalActivity : BaseActivity() {
         }
 
         binding.principalButtonTask.setOnClickListener{
-            val intent = Intent(this, ActividadesActivity::class.java)
+            val intent = Intent(this, MenuActividadesActivity::class.java)
             startActivity(intent)
         }
         binding.principalButtonCommunity.setOnClickListener{

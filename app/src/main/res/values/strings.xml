@@ -49,4 +49,6 @@
 
     <string name="actTitle">Título de la actividad </string>
     <string name="actDesc">Descripción de la actividad </string>
+
+    <string name="menAct">ACTIVIDADES</string>
 </resources>
