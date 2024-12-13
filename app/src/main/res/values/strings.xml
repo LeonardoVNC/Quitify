@@ -46,4 +46,7 @@
     <string name="newPostCatCelebration">Quiero compartir un logro</string>
     <string name="newPostCatSad">Necesito desahogarme un poco</string>
     <string name="newPostCatOther">Otro</string>
+
+    <string name="actTitle">Título de la actividad </string>
+    <string name="actDesc">Descripción de la actividad </string>
 </resources>
