@@ -7,6 +7,7 @@
         <item name="colorOnPrimary">#202020</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">sans-serif</item>
 
         <item name="colorPrimary">#FFB447</item>
         <item name="colorSecondary">#F49F45</item>
@@ -23,6 +24,7 @@
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">sans-serif</item>
 
         <item name="colorPrimary">#464646</item>
         <item name="colorSecondary">#AAAAAA</item>
