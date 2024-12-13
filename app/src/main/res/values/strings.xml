@@ -16,4 +16,12 @@
     <string name="countSecond">Segundos</string>
     <string name="buttonReset">Reiniciar Tiempo</string>
     <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
+    <string name="welcomeTitle1">Descubre y comprende tus adicciones</string>
+    <string name="welcomeTitle2">Construye metas a corto plazo</string>
+    <string name="welcomeTitle3">Redescubre la felicidad en las pequeñas cosas</string>
+    <string name="welcomeDesc1">Identifica los hábitos que afectan tu salud y bienestar, y que te generan una falsa sensación de placer instantáneo. Este es el primer paso hacia una vida más plena y saludable.</string>
+    <string name="welcomeDesc2">Con pequeños retos diarios, podrás avanzar hacia el cambio que deseas. Cada meta alcanzada será un paso más hacia un estilo de vida lleno de motivación y equilibrio.</string>
+    <string name="welcomeDesc3">Al superar tus hábitos negativos, comenzarás a disfrutar de cada momento con mayor significado. Gana control sobre tu vida y construye una versión más fuerte de ti mismo.</string>
+    <string name="welcomeStart">EMPEZAR</string>
+    <string name="welcomeNext">SIGUIENTE</string>
 </resources>

@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
 
     private lateinit var presentacionList: List<Presentacion>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,24 +17,25 @@ class IntroActivity : AppCompatActivity() {
 
         presentacionList= listOf(
             Presentacion(
-                fondo= R.color.white,
-                image= R.drawable.icono_persona,
-                titulo = "HOLAA",
-                descripcion = "CHAAU"
+                fondo= R.drawable.gradient_background,
+                image= R.drawable.welcome_one,
+                titulo = getString(R.string.welcomeTitle1),
+                descripcion = getString(R.string.welcomeDesc1)
             ),Presentacion(
-                fondo= R.color.white,
-                image= R.drawable.icono_persona,
-                titulo = "HOLAA",
-                descripcion = "CHAAU"
+                fondo= R.drawable.gradient_background,
+                image= R.drawable.welcome_two,
+                titulo = getString(R.string.welcomeTitle2),
+                descripcion = getString(R.string.welcomeDesc2)
             ),Presentacion(
-                fondo= R.color.black,
-                image= R.drawable.menu3,
-                titulo = "HOLAA",
-                descripcion = "CHAAU"
+                fondo= R.drawable.gradient_background,
+                image= R.drawable.welcome_three,
+                titulo = getString(R.string.welcomeTitle3),
+                descripcion = getString(R.string.welcomeDesc3)
             )
         )
-        val adapter = ViewPagerAdapter(presentacionList)
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
+        val adapter = ViewPagerAdapter(presentacionList, viewPager)
         viewPager.adapter = adapter
+
     }
 }
