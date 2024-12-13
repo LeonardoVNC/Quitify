@@ -53,8 +53,8 @@ class PrincipalActivity : BaseActivity() {
         }
 
         binding.principalButtonTask.setOnClickListener{
-            //TODO implementar intent a la pantalla de Recomendaciones/Tareas
-            println("Boton Recomendaciones Presionado")
+            val intent = Intent(this, ActividadesActivity::class.java)
+            startActivity(intent)
         }
         binding.principalButtonCommunity.setOnClickListener{
             val intent = Intent(this, ForoDeComunidadActivity::class.java)
