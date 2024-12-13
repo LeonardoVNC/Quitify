@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
+import java.util.Random
 
 class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
@@ -39,15 +40,16 @@ class PrincipalActivity : BaseActivity() {
             }
         }
         calcularTiempoTranscurrido(LocalDateTime.now())
+        elegirMotivacion()
         visibilidadContador()
         runnable.run()
 
         binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
-        binding.buttonReset.setOnClickListener{
+        binding.principalButtonReset.setOnClickListener{
             showConfirmarReinicio()
         }
 
-        binding.buttonMenu.setOnClickListener{
+        binding.principalButtonMenu.setOnClickListener{
             val intent = Intent(this, ConfiguracionActivity::class.java)
             startActivity(intent)
         }
@@ -205,5 +207,26 @@ class PrincipalActivity : BaseActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun elegirMotivacion() {
+        val motivacion = listOf(
+            R.string.motivation1,
+            R.string.motivation2,
+            R.string.motivation3,
+            R.string.motivation4,
+            R.string.motivation5,
+            R.string.motivation6,
+            R.string.motivation7,
+            R.string.motivation8,
+            R.string.motivation9,
+            R.string.motivation10,
+            R.string.motivation11,
+            R.string.motivation12,
+            R.string.motivation13,
+            R.string.motivation14,
+            R.string.motivation15
+        )
+        binding.principalTextMotivation.text = getString(motivacion.random())
     }
 }
