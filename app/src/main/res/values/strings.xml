@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoodleNetworkPlus</string>
+    <string name="app_name">Quitify</string>
     <string name="desc_themes">Seleccione un tema:</string>
     <string name="desc_save_theme">Seleccionado: </string>
     <string name="save_themes">Guardar Tema</string>
