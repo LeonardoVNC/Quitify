@@ -20,6 +20,7 @@ class PrincipalActivity : BaseActivity() {
 
     private var timerSeconds: Int = 0;
     private var timerMinutes: Int = 0;
+    
     private var timerHours: Int = 0;
     private var timerDays: Int = 0;
     private var timerMonths: Int = 0;

@@ -38,9 +38,19 @@ class MenuActividadesActivity : BaseActivity() {
             intent.putExtra(ID_CATEGORIA,"Deporte")
             startActivity(intent)
         }
-        binding.menuactArte.setOnClickListener {
+        binding.menuactDibujo.setOnClickListener {
             val intent = Intent(this, ActividadesActivity::class.java)
-            intent.putExtra(ID_CATEGORIA,"Arte")
+            intent.putExtra(ID_CATEGORIA,"Dibujo")
+            startActivity(intent)
+        }
+        binding.menuactCocina.setOnClickListener {
+            val intent = Intent(this, ActividadesActivity::class.java)
+            intent.putExtra(ID_CATEGORIA,"Cocina")
+            startActivity(intent)
+        }
+        binding.menuactMusica.setOnClickListener {
+            val intent = Intent(this, ActividadesActivity::class.java)
+            intent.putExtra(ID_CATEGORIA,"Musica")
             startActivity(intent)
         }
     }

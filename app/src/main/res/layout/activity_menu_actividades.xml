@@ -67,11 +67,11 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:backgroundTint="@android:color/transparent"
-                        android:text="@string/actDesc"/>
+                        android:text="@string/menDeporte"/>
                 </LinearLayout>
                 <!-- Categoria Arte -->
                 <LinearLayout
-                    android:id="@+id/menuact_arte"
+                    android:id="@+id/menuact_dibujo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_background"
@@ -83,9 +83,40 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:backgroundTint="@android:color/transparent"
-                        android:text="@string/actDesc"/>
+                        android:text="@string/menDibujo"/>
                 </LinearLayout>
-
+                <!-- Categoria Lectura y escritura -->
+                <LinearLayout
+                    android:id="@+id/menuact_cocina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_background"
+                    android:layout_gravity="center"
+                    android:padding="15dp"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:backgroundTint="@android:color/transparent"
+                        android:text="@string/menCocina"/>
+                </LinearLayout>
+                <!-- Categoria Cocina -->
+                <LinearLayout
+                    android:id="@+id/menuact_musica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_background"
+                    android:layout_gravity="center"
+                    android:padding="15dp"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:backgroundTint="@android:color/transparent"
+                        android:text="@string/menMusica"/>
+                </LinearLayout>
             </LinearLayout>
 
 

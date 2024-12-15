@@ -51,4 +51,8 @@
     <string name="actDesc">Descripción de la actividad </string>
 
     <string name="menAct">ACTIVIDADES</string>
+    <string name="menDeporte">Deporte</string>
+    <string name="menDibujo">Dibujo</string>
+    <string name="menCocina">Cocina</string>
+    <string name="menMusica">Musica</string>
 </resources>
