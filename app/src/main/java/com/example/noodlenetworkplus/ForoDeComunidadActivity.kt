@@ -39,6 +39,10 @@ class ForoDeComunidadActivity : BaseActivity() {
             val intent = Intent(this, PrincipalActivity::class.java)
             startActivity(intent)
         }
+        binding.communityButtonTask.setOnClickListener {
+            val intent = Intent(this, MenuActividadesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun setUpRecyclerView() {
