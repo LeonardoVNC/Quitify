@@ -20,6 +20,7 @@ class PrincipalActivity : BaseActivity() {
 
     private var timerSeconds: Int = 0;
     private var timerMinutes: Int = 0;
+    
     private var timerHours: Int = 0;
     private var timerDays: Int = 0;
     private var timerMonths: Int = 0;
@@ -53,8 +54,8 @@ class PrincipalActivity : BaseActivity() {
         }
 
         binding.principalButtonTask.setOnClickListener{
-            //TODO implementar intent a la pantalla de Recomendaciones/Tareas
-            println("Boton Recomendaciones Presionado")
+            val intent = Intent(this, MenuActividadesActivity::class.java)
+            startActivity(intent)
         }
         binding.principalButtonCommunity.setOnClickListener{
             val intent = Intent(this, ForoDeComunidadActivity::class.java)
