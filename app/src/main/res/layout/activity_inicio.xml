@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inicio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#416B7E"
+    tools:context=".InicioActivity">
+    <ImageView
+        android:id="@+id/inicio_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_margin="20dp"
+        android:backgroundTint="@android:color/transparent"/>
+    <TextView
+        android:id="@+id/inicio_texto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-thin"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="center"
+        android:textStyle="normal"/>
+</LinearLayout>
