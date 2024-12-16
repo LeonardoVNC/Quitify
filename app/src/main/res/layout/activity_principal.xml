@@ -2,75 +2,71 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="fill_vertical"
-    android:id="@+id/main"
+    android:id="@+id/principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="fill_vertical"
     tools:context=".PrincipalActivity">
 
-    <RelativeLayout
+    <!-- Menú superior -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/principal_upper_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- Botón Menú -->
+        <ImageButton
+            android:id="@+id/principal_button_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/menu3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/editTextColor" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Menú superior -->
+    <!-- Contenido de Principal -->
+    <ScrollView
+        android:id="@+id/principal_middle_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/principal_lower_menu"
+        app:layout_constraintTop_toBottomOf="@id/principal_upper_menu">
         <LinearLayout
-            android:id="@+id/principal_upper_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:padding="10dp"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/button_menu"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/menu3"
-                app:tint="?attr/editTextColor" />
-
-        </LinearLayout>
-
-        <!-- Contenido de Principal -->
-        <ScrollView
-            android:id="@+id/principal_middle_view"
-            android:layout_below="@id/principal_upper_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="55dp">
-
+            android:orientation="vertical">
+            <!-- Contador y control de Tiempo -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- Contador y control de Tiempo -->
-                <LinearLayout
+                android:layout_marginBottom="15dp"
+                android:background="?attr/colorSurface"
+                android:orientation="vertical"
+                android:padding="25dp">
+                <TextView
+                    android:id="@+id/principal_text_countmsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/countMessage" />
+                <!-- Contador Años -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="?attr/colorSurface"
-                    android:padding="25dp"
-                    android:layout_marginBottom="15dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textViewCountMessage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/countMessage"
-                        android:background="@android:color/transparent"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        />
-
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterYear"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:visibility="gone">
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountYear"
                             style="@style/CountProgresBar"
@@ -79,16 +75,23 @@
                         <TextView
                             android:id="@+id/textViewCountYear"
                             style="@style/SubtitleText"
-                            android:text="@string/countYear"
+                            android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"/>
+                            android:text="@string/countYear" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Contador Meses -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterMonth"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:visibility="gone">
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountMonth"
                             style="@style/CountProgresBar"
@@ -97,16 +100,23 @@
                         <TextView
                             android:id="@+id/textViewCountMonth"
                             style="@style/SubtitleText"
-                            android:text="@string/countMonth"
+                            android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"/>
+                            android:text="@string/countMonth" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Contador Días -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterDay"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:visibility="gone">
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountDay"
                             style="@style/CountProgresBar"
@@ -116,19 +126,25 @@
                             android:id="@+id/textViewCountDay"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:text="@string/countDay"
                             android:textSize="22sp"
-                            android:textStyle="bold|italic"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center_vertical"
-                            />
+                            android:textStyle="bold|italic" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Contador Horas -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterHour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterHour"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:visibility="gone">
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountHour"
                             style="@style/CountProgresBar"
@@ -137,17 +153,23 @@
                         <TextView
                             android:id="@+id/textViewCountHour"
                             style="@style/SubtitleText"
-                            android:text="@string/countHour"
-                            android:background="@android:color/transparent"
                             android:layout_gravity="center_vertical"
-                            />
+                            android:background="@android:color/transparent"
+                            android:text="@string/countHour" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Contador Minutos -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterMinute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterMinute"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:visibility="gone">
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountMinute"
                             style="@style/CountProgresBar"
@@ -156,17 +178,22 @@
                         <TextView
                             android:id="@+id/textViewCountMinute"
                             style="@style/SubtitleText"
-                            android:text="@string/countMinute"
-                            android:background="@android:color/transparent"
                             android:layout_gravity="center_vertical"
-                            />
+                            android:background="@android:color/transparent"
+                            android:text="@string/countMinute" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Contador Segundos -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/counterSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="10dp">
                     <FrameLayout
-                        android:id="@+id/counterSecond"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        >
+                        android:layout_height="wrap_content">
                         <ProgressBar
                             android:id="@+id/progressBarCountSecond"
                             style="@style/CountProgresBar"
@@ -175,89 +202,123 @@
                         <TextView
                             android:id="@+id/textViewCountSecond"
                             style="@style/SubtitleText"
-                            android:text="@string/countSecond"
-                            android:background="@android:color/transparent"
                             android:layout_gravity="center_vertical"
-                            />
+                            android:background="@android:color/transparent"
+                            android:text="@string/countSecond" />
                     </FrameLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <!-- Boton de Reinicio -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:orientation="vertical"
-                        android:background="@android:color/transparent"
-                        android:layout_gravity="center">
-                        <ImageButton
-                            android:id="@+id/buttonReset"
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:src="@drawable/reset_time"
-                            android:background="@android:color/transparent"
-                            app:tint="?attr/editTextColor"
-                            android:layout_gravity="center"/>
-                        <TextView
-                            android:id="@+id/textButtonReset"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/buttonReset"
-                            android:textSize="12sp"
-                            android:layout_marginTop="4dp"
-                            android:background="@android:color/transparent"
-                            android:layout_gravity="center" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Sección de Mensaje motivacional -->
+                <!-- Boton de Reinicio -->
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="?attr/colorSurface"
-                    android:padding="25dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:background="@android:color/transparent"
                     android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/principal_button_reset"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/reset_time"
+                        app:tint="?attr/editTextColor" />
                     <TextView
+                        android:id="@+id/principal_text_reset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/firstMotivation"
-                        android:gravity="center"
-                        android:textSize="26sp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="4dp"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        android:text="@string/buttonReset"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
 
-        <!-- Menú inferior -->
-        <LinearLayout
-            android:id="@+id/principal_lower_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:background="?attr/colorSecondary"
-            android:padding="10dp">
-            <ImageButton
-                android:id="@+id/principal_button_task"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/task_check"
-                android:layout_weight="1"
+            <!-- Contador dias totales -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="?attr/colorSurface"
                 android:gravity="center"
-                app:tint="?attr/editTextColor"/>
-            <ImageButton
-                android:id="@+id/principal_button_community"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/community"
-                android:layout_weight="1"
-                android:gravity="center"
-                app:tint="?attr/editTextColor"/>
+                android:padding="25dp">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent">
+                    <TextView
+                        android:id="@+id/principal_text_count_days"
+                        style="@style/SubtitleText"
+                        android:background="@android:color/transparent"
+                        android:text="@string/countDay"
+                        android:textSize="32sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Sección de Mensaje motivacional -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="?attr/colorSurface"
+                android:orientation="vertical"
+                android:padding="28dp">
+                <TextView
+                    android:id="@+id/principal_text_motivation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="@string/motivation1"
+                    android:textSize="28sp" />
+            </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
+
+    <!-- Menú inferior -->
+    <LinearLayout
+        android:id="@+id/principal_lower_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSecondary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!-- Acceso a Pantalla Principal -->
+        <!-- No tiene efecto presionarlo -->
+        <ImageButton
+            android:id="@+id/principal_button_time"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/clock_progress"
+            app:tint="?attr/colorAccent" />
+        <!-- Acceso a Pantalla Recomendaciones -->
+        <ImageButton
+            android:id="@+id/principal_button_task"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/task_check"
+            app:tint="?attr/editTextColor" />
+        <!-- Acceso a Pantalla Comunidad -->
+        <ImageButton
+            android:id="@+id/principal_button_community"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/community"
+            app:tint="?attr/editTextColor" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,60 @@
     <string name="countMinute">Minutos</string>
     <string name="countSecond">Segundos</string>
     <string name="buttonReset">Reiniciar Tiempo</string>
+    <string name="motivation1">Cada paso hacia adelante, por pequeño que sea, te acerca a la vida que deseas.</string>
+    <string name="motivation2">Hoy es un nuevo día. Un nuevo comienzo para tomar control de tu vida y ser la mejor versión de ti mismo.</string>
+    <string name="motivation3">El verdadero éxito no se mide por lo que has superado, sino por la fuerza que has encontrado para seguir adelante.</string>
+    <string name="motivation4">Recuerda: el camino hacia la recuperación no es lineal, pero cada esfuerzo cuenta.</string>
+    <string name="motivation5">El cambio comienza con un pensamiento, y ese pensamiento puede ser el primero de muchos.</string>
+    <string name="motivation6">No estás solo en este viaje. Cada día es una oportunidad para reconstruir tu vida.</string>
+    <string name="motivation7">Tu valor no depende de tus fallos pasados. Lo que importa es la decisión que tomes hoy para avanzar.</string>
+    <string name="motivation8">La recuperación es un proceso, no un destino. Celebra cada pequeño logro.</string>
+    <string name="motivation9">Hoy decides el futuro que deseas tener. El primer paso hacia una vida libre de adicciones es creer que puedes lograrlo.</string>
+    <string name="motivation10">No se trata de cuántas veces caes, sino de cuántas veces te levantas y sigues adelante.</string>
+    <string name="motivation11">Eres más fuerte de lo que crees. Cada día sin caer es una victoria.</string>
+    <string name="motivation12">Cuando te enfrentas a los momentos difíciles, recuerda que la fortaleza está en seguir adelante, no en evitar los obstáculos.</string>
+    <string name="motivation13">Tu mente tiene el poder de cambiar tu vida. Cree en ti y en el proceso de transformación.</string>
+    <string name="motivation14">No te defines por tus errores, sino por las decisiones que tomes para mejorar cada día.</string>
+    <string name="motivation15">Cada día es una nueva oportunidad para crear la vida que mereces.</string>
+    <string name="showConfirmationTitle">¿Estás seguro que quieres reiniciar el contador?</string>
+    <string name="showConfirmationContent">No te avergüences de hacerlo. Deberías estar orgulloso de intentarlo.</string>
+    <string name="showConfirmationPositive">Reiniciar</string>
+    <string name="showConfirmationNegative">Cancelar</string>
+
+    <string name="configAccount">Detalles de la cuenta</string>
+    <string name="configTheme">Cambiar tema</string>
+    <string name="configCloseAccount">Cerrar sesión</string>
+
+    <string name="accountUsername">Username</string>
+    <string name="accountAdic">Adicción</string>
+    <string name="accountDate">17/04/24</string>
+
+    <string name="closeAccountTitle">Cerrar sesión</string>
+    <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
+    <string name="closeAccountPositive">Aceptar</string>
+    <string name="closeAccountNegative">Cancelar</string>
+
+    <string name="postAuthor">AutorDeLaPublicación</string>
+    <string name="postDate">Fecha-De-Publicación</string>
+    <string name="postHour">Hora-De-Publicación</string>
+    <string name="postContent">Contenido neto de la publicación.</string>
+    <string name="newPostDesc">Publica algo nuevo</string>
+    <string name="newPostHint">¿Qué quieres compartir hoy?</string>
+    <string name="newPostHintOnEmpty">No puedes publicar un texto vacío, prueba a compartir algun pensamiento que tengas</string>
+    <string name="newPostCatDescription">¿Qué efecto buscas con esta publicación?</string>
+    <string name="newPostCatSupport">Quiero motivar a los demás</string>
+    <string name="newPostCatCelebration">Quiero compartir un logro</string>
+    <string name="newPostCatSad">Necesito desahogarme un poco</string>
+    <string name="newPostCatOther">Otro</string>
+
+    <string name="actTitle">Título de la actividad </string>
+    <string name="actDesc">Descripción de la actividad </string>
+
+    <string name="menAct">ACTIVIDADES</string>
+    <string name="menDeporte">Deporte</string>
+    <string name="menDibujo">Dibujo</string>
+    <string name="menCocina">Cocina</string>
+    <string name="menMusica">Musica</string>
     <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
     <string name="welcomeTitle1">Descubre y comprende tus adicciones</string>
     <string name="welcomeTitle2">Construye metas a corto plazo</string>
@@ -24,4 +78,16 @@
     <string name="welcomeDesc3">Al superar tus hábitos negativos, comenzarás a disfrutar de cada momento con mayor significado. Gana control sobre tu vida y construye una versión más fuerte de ti mismo.</string>
     <string name="welcomeStart">EMPEZAR</string>
     <string name="welcomeNext">SIGUIENTE</string>
+    <string name="LginTitulo">Iniciar Sesión</string>
+    <string name="LginCorreoElec">Correo Electrónico</string>
+    <string name="LginContraseña">Contraseña</string>
+    <string name="LginRegisterRedirect">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="RegTitulo">Registro</string>
+    <string name="RegUsr">Nombre de usuario</string>
+    <string name="RegCorreoElec">Correo Electrónico</string>
+    <string name="RegContraseña">Contraseña</string>
+    <string name="RegConfContraseña">Confirmar contraseña</string>
+    <string name="RegReg">Registrarse</string>
+    <string name="RegLginRedirect">¿Ya tienes cuenta? Inicia sesión aquí</string>
+
 </resources>

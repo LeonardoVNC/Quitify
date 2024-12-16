@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
+import java.util.Random
 
 class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
@@ -19,10 +21,12 @@ class PrincipalActivity : BaseActivity() {
 
     private var timerSeconds: Int = 0;
     private var timerMinutes: Int = 0;
+    
     private var timerHours: Int = 0;
     private var timerDays: Int = 0;
     private var timerMonths: Int = 0;
     private var timerYears: Int = 0;
+    private var totalDays: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,39 +41,27 @@ class PrincipalActivity : BaseActivity() {
             }
         }
         calcularTiempoTranscurrido(LocalDateTime.now())
+        elegirMotivacion()
         visibilidadContador()
         runnable.run()
 
-        binding.buttonReset.setOnClickListener{
-            beginDate = LocalDateTime.now()
-            timerSeconds= 0;
-            timerMinutes= 0;
-            timerHours= 0;
-            timerDays= 0;
-            timerMonths= 0;
-            timerYears= 0;
-            binding.counterYear.visibility = View.GONE
-            binding.counterMonth.visibility = View.GONE
-            binding.counterDay.visibility = View.GONE
-            binding.counterHour.visibility = View.GONE
-            binding.counterMinute.visibility = View.GONE
-            mostrarContador()
+        binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
+        binding.principalButtonReset.setOnClickListener{
+            showConfirmarReinicio()
         }
 
-        binding.buttonMenu.setOnClickListener{
-            //TODO este botón debe desplegar un menú, dentro de este menú se podrá entrar a configuraciones y a su
-            // vez al selector de temas, esta conexión es temporal
-            val intent = Intent(this, SelectThemeActivity::class.java)
+        binding.principalButtonMenu.setOnClickListener{
+            val intent = Intent(this, ConfiguracionActivity::class.java)
             startActivity(intent)
         }
 
         binding.principalButtonTask.setOnClickListener{
-            //TODO implementar intent a la pantalla de Recomendaciones/Tareas
-            println("Boton Recomendaciones Presionado")
+            val intent = Intent(this, MenuActividadesActivity::class.java)
+            startActivity(intent)
         }
         binding.principalButtonCommunity.setOnClickListener{
-            //TODO implementar intent a la pantalla de Comunidad
-            println("Boton Comunidad Presionado")
+            val intent = Intent(this, ForoDeComunidadActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -111,6 +103,7 @@ class PrincipalActivity : BaseActivity() {
         timerDays = day-beginDate.dayOfMonth
         timerMonths = month-beginDate.monthValue
         timerYears = year-beginDate.year
+        totalDays = ChronoUnit.DAYS.between(beginDate, LocalDateTime.now()).toInt()
     }
 
     private fun mostrarContador() {
@@ -158,27 +151,83 @@ class PrincipalActivity : BaseActivity() {
             timerSeconds = 0
             timerMinutes++
             binding.counterMinute.visibility = View.VISIBLE
-        }
-        if (timerMinutes == 60) {
-            timerMinutes = 0
-            timerHours++
-            binding.counterHour.visibility = View.VISIBLE
-        }
-        if (timerHours == 24) {
-            timerHours = 0
-            timerDays++
-            binding.counterDay.visibility = View.VISIBLE
-        }
-        if (timerDays == 30) {
-            timerDays = 0
-            timerMonths++
-            binding.counterMonth.visibility = View.VISIBLE
-        }
-        if (timerMonths == 12) {
-            timerMonths = 0
-            timerYears++
-            binding.counterYear.visibility = View.VISIBLE
+            if (timerMinutes == 60) {
+                timerMinutes = 0
+                timerHours++
+                binding.counterHour.visibility = View.VISIBLE
+                if (timerHours == 24) {
+                    timerHours = 0
+                    timerDays++
+                    totalDays++
+                    binding.counterDay.visibility = View.VISIBLE
+                    if (timerDays == 30) {
+                        timerDays = 0
+                        timerMonths++
+                        binding.counterMonth.visibility = View.VISIBLE
+                        if (timerMonths == 12) {
+                            timerMonths = 0
+                            timerYears++
+                            binding.counterYear.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
         }
         mostrarContador()
+    }
+
+    fun reiniciarTiempo () {
+        beginDate = LocalDateTime.now()
+        timerSeconds= 0;
+        timerMinutes= 0;
+        timerHours= 0;
+        timerDays= 0;
+        timerMonths= 0;
+        timerYears= 0;
+        binding.counterYear.visibility = View.GONE
+        binding.counterMonth.visibility = View.GONE
+        binding.counterDay.visibility = View.GONE
+        binding.counterHour.visibility = View.GONE
+        binding.counterMinute.visibility = View.GONE
+        totalDays = 0
+        binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
+        mostrarContador()
+    }
+
+    private fun showConfirmarReinicio() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.showConfirmationTitle))
+        builder.setMessage(getString(R.string.showConfirmationContent))
+
+        builder.setPositiveButton(getString(R.string.showConfirmationPositive)) { dialog, which ->
+            reiniciarTiempo()
+        }
+        builder.setNegativeButton(getString(R.string.showConfirmationNegative)) { dialog, which ->
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun elegirMotivacion() {
+        val motivacion = listOf(
+            R.string.motivation1,
+            R.string.motivation2,
+            R.string.motivation3,
+            R.string.motivation4,
+            R.string.motivation5,
+            R.string.motivation6,
+            R.string.motivation7,
+            R.string.motivation8,
+            R.string.motivation9,
+            R.string.motivation10,
+            R.string.motivation11,
+            R.string.motivation12,
+            R.string.motivation13,
+            R.string.motivation14,
+            R.string.motivation15
+        )
+        binding.principalTextMotivation.text = getString(motivacion.random())
     }
 }
