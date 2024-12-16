@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser != null) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PrincipalActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, PrincipalActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
