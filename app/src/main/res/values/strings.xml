@@ -69,4 +69,17 @@
     <string name="menDibujo">Dibujo</string>
     <string name="menCocina">Cocina</string>
     <string name="menMusica">Musica</string>
+    <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
+    <string name="LginTitulo">Iniciar Sesión</string>
+    <string name="LginCorreoElec">Correo Electrónico</string>
+    <string name="LginContraseña">Contraseña</string>
+    <string name="LginRegisterRedirect">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="RegTitulo">Registro</string>
+    <string name="RegUsr">Nombre de usuario</string>
+    <string name="RegCorreoElec">Correo Electrónico</string>
+    <string name="RegContraseña">Contraseña</string>
+    <string name="RegConfContraseña">Confirmar contraseña</string>
+    <string name="RegReg">Registrarse</string>
+    <string name="RegLginRedirect">¿Ya tienes cuenta? Inicia sesión aquí</string>
+
 </resources>
