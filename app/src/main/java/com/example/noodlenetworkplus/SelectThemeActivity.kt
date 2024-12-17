@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import com.example.noodlenetworkplus.databinding.ActivitySelectThemeBinding
 
@@ -21,7 +22,7 @@ class SelectThemeActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
         tema = sharedPreferences.getInt("selected_theme", R.style.Theme_DarkTur)
 
         //Para cualquier tema que se agregue a la aplicación, se debe añadir su configuracion aqui.

@@ -10,9 +10,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.noodlenetworkplus.PrincipalActivity
 import com.example.noodlenetworkplus.R
-import com.example.noodlenetworkplus.RegisterActivity
+import com.example.noodlenetworkplus.RegisterTimeActivity
 import com.example.noodlenetworkplus.dataClasses.Presentacion
 
 class ViewPagerAdapter(
@@ -57,7 +56,7 @@ class ViewPagerAdapter(
                 botonSiguiente.visibility = View.GONE
                 botonEmpezar.setOnClickListener {
                     itemView.context.startActivity(
-                        Intent(itemView.context, RegisterActivity::class.java)
+                        Intent(itemView.context, RegisterTimeActivity::class.java)
                     )
                 }
             } else {

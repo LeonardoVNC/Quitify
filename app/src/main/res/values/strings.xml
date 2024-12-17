@@ -90,4 +90,10 @@
     <string name="RegReg">Registrarse</string>
     <string name="RegLginRedirect">¿Ya tienes cuenta? Inicia sesión aquí</string>
 
+    <string name="reg_time_desc">¿Cuándo iniciaste tu sobriedad?</string>
+    <string name="reg_time_desc_date">Elige la fecha:</string>
+    <string name="reg_time_desc_hour">Elige la hora:</string>
+    <string name="next">SIGUIENTE</string>
+    <string name="back">ATRAS</string>
+    <string name="end">TERMINAR</string>
 </resources>

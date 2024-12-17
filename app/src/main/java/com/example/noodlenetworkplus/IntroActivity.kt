@@ -1,11 +1,12 @@
 package com.example.noodlenetworkplus
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noodlenetworkplus.adapters.ViewPagerAdapter
 import com.example.noodlenetworkplus.dataClasses.Presentacion
 
-class IntroActivity : BaseActivity() {
+class IntroActivity : AppCompatActivity() {
 
     private lateinit var presentacionList: List<Presentacion>
     override fun onCreate(savedInstanceState: Bundle?) {

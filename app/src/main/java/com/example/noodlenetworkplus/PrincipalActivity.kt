@@ -6,6 +6,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
+import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.BEGIN_DATE
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
@@ -15,13 +17,10 @@ class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
-
-    private var beginDate: LocalDateTime = LocalDateTime.of(2024, 4, 17, 8,21,0)
-    //private val beginDate: LocalDateTime = LocalDateTime.of(2024, 5, 19, 21,23,0)
+    private lateinit var beginDate: LocalDateTime
 
     private var timerSeconds: Int = 0;
     private var timerMinutes: Int = 0;
-    
     private var timerHours: Int = 0;
     private var timerDays: Int = 0;
     private var timerMonths: Int = 0;
@@ -33,6 +32,11 @@ class PrincipalActivity : BaseActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+        val beginDateString = sharedPreferences.getString(BEGIN_DATE, LocalDateTime.now().toString())
+
+        beginDate = LocalDateTime.parse(beginDateString)
 
         runnable = object : Runnable {
             override fun run() {
@@ -177,7 +181,7 @@ class PrincipalActivity : BaseActivity() {
     }
 
     fun reiniciarTiempo () {
-        beginDate = LocalDateTime.now()
+        getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE).edit().putString(BEGIN_DATE, LocalDateTime.now().toString()).apply()
         timerSeconds= 0;
         timerMinutes= 0;
         timerHours= 0;
