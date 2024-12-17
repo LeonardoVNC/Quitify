@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import com.example.noodlenetworkplus.RegisterAdictionActivity.Companion.USER_ADDICTION
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.BEGIN_DATE
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
@@ -35,6 +36,7 @@ class PrincipalActivity : BaseActivity() {
 
         val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
         val beginDateString = sharedPreferences.getString(BEGIN_DATE, LocalDateTime.now().toString())
+        val adictionString = sharedPreferences.getString(USER_ADDICTION, "una adicción")
 
         beginDate = LocalDateTime.parse(beginDateString)
 
@@ -49,6 +51,7 @@ class PrincipalActivity : BaseActivity() {
         visibilidadContador()
         runnable.run()
 
+        binding.principalTextCountmsg.text = "${getString(R.string.countMessage)} $adictionString"
         binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
         binding.principalButtonReset.setOnClickListener{
             showConfirmarReinicio()

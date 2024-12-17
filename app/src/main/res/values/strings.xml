@@ -7,7 +7,7 @@
     <string name="theme_dark_purple">Morado (Oscuro)</string>
     <string name="theme_dark">Oscuro</string>
     <string name="theme_light">Claro</string>
-    <string name="countMessage">Tiempo libre de adicción</string>
+    <string name="countMessage">Tiempo libre de</string>
     <string name="countYear">Años</string>
     <string name="countMonth">Meses</string>
     <string name="countDay">Días</string>
@@ -93,7 +93,13 @@
     <string name="reg_time_desc">¿Cuándo iniciaste tu sobriedad?</string>
     <string name="reg_time_desc_date">Elige la fecha:</string>
     <string name="reg_time_desc_hour">Elige la hora:</string>
+    <string name="reg_add_desc">¿Qué adicción estás tratando de dejar?</string>
+    <string name="reg_add_drunk">Las bebidas alcohólicas</string>
+    <string name="reg_add_smoke">El cigarro</string>
+    <string name="reg_add_drugs">Drogas</string>
+    <string name="reg_add_other">Otra adicción</string>
+    <string name="reg_add_hint">Escribe la adicción aqui</string>
     <string name="next">SIGUIENTE</string>
     <string name="back">ATRAS</string>
-    <string name="end">TERMINAR</string>
+    <string name="end">CONTINUAR</string>
 </resources>
