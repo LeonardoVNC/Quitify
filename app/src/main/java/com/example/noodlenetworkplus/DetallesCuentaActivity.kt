@@ -1,11 +1,9 @@
 package com.example.noodlenetworkplus
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.noodlenetworkplus.databinding.ActivityDetallesCuentaBinding
+import android.content.Context
+
 
 class DetallesCuentaActivity : BaseActivity() {
     private lateinit var binding: ActivityDetallesCuentaBinding
@@ -15,19 +13,17 @@ class DetallesCuentaActivity : BaseActivity() {
         binding = ActivityDetallesCuentaBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        mostrarDatosPersonales()
 
-        binding.accountButtonBack.setOnClickListener{onBackPressed()}
+        mostrarDatosPersonales()
+        binding.accountButtonBack.setOnClickListener { onBackPressed() }
     }
 
     fun mostrarDatosPersonales() {
-        //TODO Acceder al username desde la información almacenada en la aplicación
-        //binding.accountTextUsername.text = ...
+        val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "Usuario")
 
-        //TODO Acceder a la adicción desde la información almacenada en la aplicación
+        binding.accountTextUsername.text = "$username"
         binding.accountTextAdic.text = "Actualmente me estoy limpiando de ${getString(R.string.accountAdic)}"
-
-        //TODO Acceder a la fecha de inicio desde la información almacenada en la aplicación
         binding.accountTextDate.text = "Empecé con este reto el ${getString(R.string.accountDate)}"
     }
 }
