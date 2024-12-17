@@ -1,13 +1,47 @@
 <resources>
+    <!-- Recursos globales -->
     <string name="app_name">Quitify</string>
-    <string name="desc_themes">Seleccione un tema:</string>
-    <string name="desc_save_theme">Seleccionado: </string>
-    <string name="save_themes">Guardar Tema</string>
-    <string name="theme_dark_tur">Turquesa (Oscuro)</string>
-    <string name="theme_dark_purple">Morado (Oscuro)</string>
-    <string name="theme_dark">Oscuro</string>
-    <string name="theme_light">Claro</string>
-    <string name="countMessage">Tiempo libre de adicción</string>
+    <string name="next">SIGUIENTE</string>
+    <string name="back">ATRAS</string>
+    <string name="end">CONTINUAR</string>
+
+    <!-- Login -->
+    <string name="LginTitulo">Iniciar Sesión</string>
+    <string name="LginCorreoElec">Correo Electrónico</string>
+    <string name="LginContraseña">Contraseña</string>
+    <string name="LginRegisterRedirect">¿No tienes cuenta? Regístrate aquí</string>
+
+    <!-- Registro -->
+    <string name="RegTitulo">Registro</string>
+    <string name="RegUsr">Nombre de usuario</string>
+    <string name="RegCorreoElec">Correo Electrónico</string>
+    <string name="RegContraseña">Contraseña</string>
+    <string name="RegConfContraseña">Confirmar contraseña</string>
+    <string name="RegReg">Registrarse</string>
+    <string name="RegLginRedirect">¿Ya tienes cuenta? Inicia sesión aquí</string>
+    <!-- Registro Time y Adicción -->
+    <string name="reg_time_desc">¿Cuándo iniciaste tu sobriedad?</string>
+    <string name="reg_time_desc_date">Elige la fecha:</string>
+    <string name="reg_time_desc_hour">Elige la hora:</string>
+    <string name="reg_add_desc">¿Qué adicción estás tratando de dejar?</string>
+    <string name="reg_add_drunk">Las bebidas alcohólicas</string>
+    <string name="reg_add_smoke">El cigarro</string>
+    <string name="reg_add_drugs">Drogas</string>
+    <string name="reg_add_other">Otra adicción</string>
+    <string name="reg_add_hint">Escribe la adicción aqui</string>
+
+    <!-- Bienvenida -->
+    <string name="welcomeTitle1">Descubre y comprende tus adicciones</string>
+    <string name="welcomeTitle2">Construye metas a corto plazo</string>
+    <string name="welcomeTitle3">Redescubre la felicidad en las pequeñas cosas</string>
+    <string name="welcomeDesc1">Identifica los hábitos que afectan tu salud y bienestar, y que te generan una falsa sensación de placer instantáneo. Este es el primer paso hacia una vida más plena y saludable.</string>
+    <string name="welcomeDesc2">Con pequeños retos diarios, podrás avanzar hacia el cambio que deseas. Cada meta alcanzada será un paso más hacia un estilo de vida lleno de motivación y equilibrio.</string>
+    <string name="welcomeDesc3">Al superar tus hábitos negativos, comenzarás a disfrutar de cada momento con mayor significado. Gana control sobre tu vida y construye una versión más fuerte de ti mismo.</string>
+    <string name="welcomeStart">EMPEZAR</string>
+    <string name="welcomeNext">SIGUIENTE</string>
+
+    <!-- Principal Activity -->
+    <string name="countMessage">Tiempo libre de</string>
     <string name="countYear">Años</string>
     <string name="countMonth">Meses</string>
     <string name="countDay">Días</string>
@@ -35,19 +69,16 @@
     <string name="showConfirmationPositive">Reiniciar</string>
     <string name="showConfirmationNegative">Cancelar</string>
 
-    <string name="configAccount">Detalles de la cuenta</string>
-    <string name="configTheme">Cambiar tema</string>
-    <string name="configCloseAccount">Cerrar sesión</string>
+    <!-- Recomendaciones -->
+    <string name="actTitle">Título de la actividad </string>
+    <string name="actDesc">Descripción de la actividad </string>
+    <string name="menAct">ACTIVIDADES</string>
+    <string name="menDeporte">Deporte</string>
+    <string name="menDibujo">Dibujo</string>
+    <string name="menCocina">Cocina</string>
+    <string name="menMusica">Musica</string>
 
-    <string name="accountUsername">Username</string>
-    <string name="accountAdic">Adicción</string>
-    <string name="accountDate">17/04/24</string>
-
-    <string name="closeAccountTitle">Cerrar sesión</string>
-    <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
-    <string name="closeAccountPositive">Aceptar</string>
-    <string name="closeAccountNegative">Cancelar</string>
-
+    <!-- Foro de comunidad -->
     <string name="postAuthor">AutorDeLaPublicación</string>
     <string name="postDate">Fecha-De-Publicación</string>
     <string name="postHour">Hora-De-Publicación</string>
@@ -61,39 +92,27 @@
     <string name="newPostCatSad">Necesito desahogarme un poco</string>
     <string name="newPostCatOther">Otro</string>
 
-    <string name="actTitle">Título de la actividad </string>
-    <string name="actDesc">Descripción de la actividad </string>
+    <!-- Configuraciones -->
+    <string name="configAccount">Detalles de la cuenta</string>
+    <string name="configTheme">Cambiar tema</string>
+    <string name="configCloseAccount">Cerrar sesión</string>
+    <!-- Cerrar sesión -->
+    <string name="closeAccountTitle">Cerrar sesión</string>
+    <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
+    <string name="closeAccountPositive">Aceptar</string>
+    <string name="closeAccountNegative">Cancelar</string>
 
-    <string name="menAct">ACTIVIDADES</string>
-    <string name="menDeporte">Deporte</string>
-    <string name="menDibujo">Dibujo</string>
-    <string name="menCocina">Cocina</string>
-    <string name="menMusica">Musica</string>
-    <string name="firstMotivation">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, tristique porttitor mus leo accumsan arcu facilisis placerat ante, cum dictum vel integer quis dictumst turpis. Gravida aptent orci turpis convallis parturient facilisi tempus ligula, semper odio congue proin mi egestas ridiculus, morbi feugiat magnis est class faucibus viverra.</string>
-    <string name="welcomeTitle1">Descubre y comprende tus adicciones</string>
-    <string name="welcomeTitle2">Construye metas a corto plazo</string>
-    <string name="welcomeTitle3">Redescubre la felicidad en las pequeñas cosas</string>
-    <string name="welcomeDesc1">Identifica los hábitos que afectan tu salud y bienestar, y que te generan una falsa sensación de placer instantáneo. Este es el primer paso hacia una vida más plena y saludable.</string>
-    <string name="welcomeDesc2">Con pequeños retos diarios, podrás avanzar hacia el cambio que deseas. Cada meta alcanzada será un paso más hacia un estilo de vida lleno de motivación y equilibrio.</string>
-    <string name="welcomeDesc3">Al superar tus hábitos negativos, comenzarás a disfrutar de cada momento con mayor significado. Gana control sobre tu vida y construye una versión más fuerte de ti mismo.</string>
-    <string name="welcomeStart">EMPEZAR</string>
-    <string name="welcomeNext">SIGUIENTE</string>
-    <string name="LginTitulo">Iniciar Sesión</string>
-    <string name="LginCorreoElec">Correo Electrónico</string>
-    <string name="LginContraseña">Contraseña</string>
-    <string name="LginRegisterRedirect">¿No tienes cuenta? Regístrate aquí</string>
-    <string name="RegTitulo">Registro</string>
-    <string name="RegUsr">Nombre de usuario</string>
-    <string name="RegCorreoElec">Correo Electrónico</string>
-    <string name="RegContraseña">Contraseña</string>
-    <string name="RegConfContraseña">Confirmar contraseña</string>
-    <string name="RegReg">Registrarse</string>
-    <string name="RegLginRedirect">¿Ya tienes cuenta? Inicia sesión aquí</string>
+    <!-- Detalles de la Cuenta -->
+    <string name="accountUsername">Username</string>
+    <string name="accountAdic">Adicción</string>
+    <string name="accountDate">17/04/24</string>
 
-    <string name="reg_time_desc">¿Cuándo iniciaste tu sobriedad?</string>
-    <string name="reg_time_desc_date">Elige la fecha:</string>
-    <string name="reg_time_desc_hour">Elige la hora:</string>
-    <string name="next">SIGUIENTE</string>
-    <string name="back">ATRAS</string>
-    <string name="end">TERMINAR</string>
+    <!-- Selector de temas -->
+    <string name="desc_themes">Seleccione un tema:</string>
+    <string name="desc_save_theme">Seleccionado: </string>
+    <string name="save_themes">Guardar Tema</string>
+    <string name="theme_dark_tur">Turquesa (Oscuro)</string>
+    <string name="theme_dark_purple">Morado (Oscuro)</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_light">Claro</string>
 </resources>

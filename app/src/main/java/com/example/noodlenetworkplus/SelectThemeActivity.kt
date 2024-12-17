@@ -23,7 +23,7 @@ class SelectThemeActivity : BaseActivity() {
         setContentView(view)
 
         val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
-        tema = sharedPreferences.getInt("selected_theme", R.style.Theme_DarkTur)
+        tema = sharedPreferences.getInt(SELECTED_THEME, R.style.Theme_DarkTur)
 
         //Para cualquier tema que se agregue a la aplicación, se debe añadir su configuracion aqui.
         binding.selectThemeButtonDarkTur.setOnClickListener {
@@ -48,9 +48,9 @@ class SelectThemeActivity : BaseActivity() {
         }
 
         binding.selectThemeButtonSave.setOnClickListener {
-            sharedPreferences.edit().putInt("selected_theme", tema).apply()
+            sharedPreferences.edit().putInt(SELECTED_THEME, tema).apply()
             val intent = Intent(this, PrincipalActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK     //Se limpia el BackStack
             startActivity(intent)
         }
 

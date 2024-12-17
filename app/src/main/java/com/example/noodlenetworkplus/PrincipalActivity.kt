@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import com.example.noodlenetworkplus.RegisterAdictionActivity.Companion.USER_ADDICTION
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.BEGIN_DATE
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
@@ -34,24 +35,30 @@ class PrincipalActivity : BaseActivity() {
         setContentView(view)
 
         val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+        //Carga un string que guarda la fecha y hora de inicio desde SharedPreferences
         val beginDateString = sharedPreferences.getString(BEGIN_DATE, LocalDateTime.now().toString())
+        //Carga un string correspondiente a la adicción del usuario desde SharedPreferences
+        val adictionString = sharedPreferences.getString(USER_ADDICTION, "una adicción")
 
-        beginDate = LocalDateTime.parse(beginDateString)
+        beginDate = LocalDateTime.parse(beginDateString)    //Convierte el string en un LocalDateTime válido
 
         runnable = object : Runnable {
             override fun run() {
                 actualizarContador()
-                handler.postDelayed(this, 1000)
+                handler.postDelayed(this, 1000)     //Actualiza el contador cada segundo
             }
         }
-        calcularTiempoTranscurrido(LocalDateTime.now())
-        elegirMotivacion()
-        visibilidadContador()
-        runnable.run()
 
+        calcularTiempoTranscurrido(LocalDateTime.now())     //Calcula el tiempo transcurrido entre beginDate y el momento actual
+        elegirMotivacion()                                  //Se carga un mensaje motivacional
+        visibilidadContador()                               //Se configura correctamente la visibilidad de las barras de progreso
+        runnable.run()                                      //Se inicia el runnable
+
+        binding.principalTextCountmsg.text = "${getString(R.string.countMessage)} $adictionString"
         binding.principalTextCountDays.text = "$totalDays ${getString(R.string.countDay)}"
+
         binding.principalButtonReset.setOnClickListener{
-            showConfirmarReinicio()
+            showConfirmarReinicio()         //Busca confirmación al reinicio del tiempo
         }
 
         binding.principalButtonMenu.setOnClickListener{
@@ -71,10 +78,11 @@ class PrincipalActivity : BaseActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        handler.removeCallbacks(runnable)
+        handler.removeCallbacks(runnable)   //Para el runnable
     }
 
-    fun calcularTiempoTranscurrido (actualDate: LocalDateTime) {
+    //Cálculo del tiempo transcurrido entre la fecha de inicio y el momento actual
+    private fun calcularTiempoTranscurrido (actualDate: LocalDateTime) {
         var second = actualDate.second
         var minute = actualDate.minute
         var hour = actualDate.hour
@@ -107,9 +115,10 @@ class PrincipalActivity : BaseActivity() {
         timerDays = day-beginDate.dayOfMonth
         timerMonths = month-beginDate.monthValue
         timerYears = year-beginDate.year
-        totalDays = ChronoUnit.DAYS.between(beginDate, LocalDateTime.now()).toInt()
+        totalDays = ChronoUnit.DAYS.between(beginDate, LocalDateTime.now()).toInt()     //Escribe el número de dias totales
     }
 
+    //Función que actualiza la nueva información del contador
     private fun mostrarContador() {
         binding.textViewCountSecond.text = " $timerSeconds ${getString(R.string.countSecond)}"
         binding.progressBarCountSecond.progress = timerSeconds
@@ -125,6 +134,7 @@ class PrincipalActivity : BaseActivity() {
         binding.progressBarCountYear.progress = timerYears
     }
 
+    //Función que determina que barras de progreso son visibles
     private fun visibilidadContador() {
         if(timerYears>0) {
             binding.counterYear.visibility = View.VISIBLE
@@ -149,6 +159,7 @@ class PrincipalActivity : BaseActivity() {
         }
     }
 
+    //Función que modifica la información del contador
     private fun actualizarContador() {
         timerSeconds++
         if (timerSeconds == 60) {
@@ -180,7 +191,8 @@ class PrincipalActivity : BaseActivity() {
         mostrarContador()
     }
 
-    fun reiniciarTiempo () {
+    //Función que reinicia el tiempo inicial al momento actual y resetea la barra de progreso
+    private fun reiniciarTiempo () {
         getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE).edit().putString(BEGIN_DATE, LocalDateTime.now().toString()).apply()
         timerSeconds= 0;
         timerMinutes= 0;
@@ -198,6 +210,7 @@ class PrincipalActivity : BaseActivity() {
         mostrarContador()
     }
 
+    //Función para evitar el reinicio accidental del contador actual
     private fun showConfirmarReinicio() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.showConfirmationTitle))
@@ -214,6 +227,7 @@ class PrincipalActivity : BaseActivity() {
         dialog.show()
     }
 
+    //Selecciona uno de los mensajes motivacionales al azar
     private fun elegirMotivacion() {
         val motivacion = listOf(
             R.string.motivation1,

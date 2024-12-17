@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="fill_vertical"
     android:id="@+id/config"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrincipalActivity">
+    android:layout_gravity="fill_vertical"
+    tools:context=".ConfiguracionActivity">
 
     <!-- Menú superior -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,17 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorSecondary"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
         <ImageButton
             android:id="@+id/config_button_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/arrow_back"
             android:backgroundTint="@android:color/transparent"
-            app:tint="?attr/editTextColor"
+            android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/editTextColor" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Contenido Principal -->
@@ -37,82 +37,84 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/colorSurface">
+            android:background="?attr/colorSurface"
+            android:padding="10dp">
             <TextView
                 style="@style/SubtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/configAccount"
                 android:backgroundTint="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/configAccount"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <ImageButton
                 android:id="@+id/config_button_account"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/arrow"
                 android:backgroundTint="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:tint="?attr/colorAccent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <!-- Selector de Temas -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/colorSurface">
+            android:background="?attr/colorSurface"
+            android:padding="10dp">
             <TextView
                 style="@style/SubtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/configTheme"
                 android:backgroundTint="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/configTheme"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <ImageButton
                 android:id="@+id/config_button_theme"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/arrow"
                 android:backgroundTint="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:tint="?attr/colorAccent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <!-- Cerrar Sesión -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/colorSurface">
+            android:background="?attr/colorSurface"
+            android:padding="10dp">
             <TextView
                 style="@style/SubtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/configCloseAccount"
                 android:backgroundTint="@android:color/transparent"
+                android:text="@string/configCloseAccount"
                 android:textColor="?attr/colorPrimary"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <ImageButton
                 android:id="@+id/config_button_close_account"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/arrow"
                 android:backgroundTint="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:tint="?attr/colorAccent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

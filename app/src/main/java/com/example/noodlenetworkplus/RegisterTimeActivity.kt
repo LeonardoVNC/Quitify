@@ -12,6 +12,7 @@ class RegisterTimeActivity : AppCompatActivity() {
     companion object {
         val APP_PREFERENCES = "app_preferences"
         val BEGIN_DATE = "begin_date"
+        val FIRST_DATE = "first_date"
     }
 
     private lateinit var binding: ActivityRegisterTimeBinding
@@ -29,18 +30,20 @@ class RegisterTimeActivity : AppCompatActivity() {
         binding.regtimeButtonEnd.setOnClickListener{
             val beginDate: LocalDateTime = LocalDateTime.of(
                 binding.regtimeDatepicker.year,
-                binding.regtimeDatepicker.month+1,
+                binding.regtimeDatepicker.month+1,  //Corrección en el mes usado
                 binding.regtimeDatepicker.dayOfMonth,
                 binding.regtimeTimepicker.hour,
                 binding.regtimeTimepicker.minute,
                 0
             )
-            sharedPreferences.edit().putString(BEGIN_DATE, beginDate.toString()).apply()
+            sharedPreferences.edit().putString(BEGIN_DATE, beginDate.toString()).apply()    //Guarda la última fecha de inicio
+            sharedPreferences.edit().putString(FIRST_DATE, beginDate.toString()).apply()    //Guarda la primera fecha de inicio
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
     }
 
+    //Establece la vista para mostrar el selector de fechas
     private fun setViewDate () {
         binding.regtimeTextDate.visibility= View.GONE
         binding.regtimeDatepicker.visibility= View.GONE
@@ -50,7 +53,7 @@ class RegisterTimeActivity : AppCompatActivity() {
         binding.regtimeButtonNext.visibility= View.GONE
         binding.regtimeButtonEnd.visibility= View.VISIBLE
     }
-
+    //Establece la vista para mostrar el selector de horas
     private fun setViewHour() {
         binding.regtimeTextDate.visibility= View.VISIBLE
         binding.regtimeDatepicker.visibility= View.VISIBLE
