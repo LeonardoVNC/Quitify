@@ -55,4 +55,7 @@
     <string name="menDibujo">Dibujo</string>
     <string name="menCocina">Cocina</string>
     <string name="menMusica">Musica</string>
+    <string name="menPoesia">Poesia</string>
+    <string name="menAprendizaje">Aprendizaje</string>
+    <string name="menVideojuegos">Videojuegos</string>
 </resources>
