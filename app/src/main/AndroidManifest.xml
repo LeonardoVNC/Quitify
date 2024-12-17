@@ -49,10 +49,10 @@
             android:name=".IntroActivity"
             android:exported="true" />
         <activity
-            android:name=".InicioActivity"
+            android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".InicioActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

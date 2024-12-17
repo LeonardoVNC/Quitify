@@ -8,15 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.noodlenetworkplus.databinding.ActivityConfiguracionBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class ConfiguracionActivity : BaseActivity() {
     private lateinit var binding: ActivityConfiguracionBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfiguracionBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        auth = FirebaseAuth.getInstance()
 
         binding.configButtonBack.setOnClickListener{onBackPressed()}
         binding.configButtonAccount.setOnClickListener{
@@ -38,7 +41,10 @@ class ConfiguracionActivity : BaseActivity() {
         builder.setMessage(getString(R.string.closeAccountContent))
 
         builder.setPositiveButton(getString(R.string.closeAccountPositive)) { dialog, which ->
-            //TODO Implementar esta función
+            auth.signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
         builder.setNegativeButton(getString(R.string.closeAccountNegative)) { dialog, which ->
             dialog.dismiss()
