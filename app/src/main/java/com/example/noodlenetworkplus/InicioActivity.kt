@@ -14,24 +14,24 @@ class InicioActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_DarkTur)
+        setTheme(R.style.Theme_DarkTur)                             //El tema se mantiene sin importar las preferencias del usuario
         super.onCreate(savedInstanceState)
         binding = ActivityInicioBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         auth = FirebaseAuth.getInstance()
-        handler.postDelayed({iniciarApp()}, 2200)
+        handler.postDelayed({iniciarApp()}, 2000)           //Después de 2 segundos se inicia la App
     }
 
     private fun iniciarApp() {
-        if (auth.currentUser != null) {
+        if (auth.currentUser != null) {         //Si ya hay una sesión iniciada
             val intent = Intent(this, PrincipalActivity::class.java)
-            startActivity(intent)
-        } else {
+            startActivity(intent)               //Se carga PrincipalActivity
+        } else {                                //Si no hay sesión iniciada
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            startActivity(intent)               //Se carga LoginActivity
         }
-        finish()
+        finish()                                //La activity se borra del backstack
     }
 }

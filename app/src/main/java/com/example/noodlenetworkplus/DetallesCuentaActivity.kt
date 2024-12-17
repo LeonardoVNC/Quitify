@@ -1,10 +1,6 @@
 package com.example.noodlenetworkplus
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.noodlenetworkplus.RegisterAdictionActivity.Companion.USER_ADDICTION
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.BEGIN_DATE
@@ -22,6 +18,7 @@ class DetallesCuentaActivity : BaseActivity() {
         binding = ActivityDetallesCuentaBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         auth = FirebaseAuth.getInstance()
         val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
         val adictionString = sharedPreferences.getString(USER_ADDICTION, "una adicción").toString()
@@ -32,7 +29,8 @@ class DetallesCuentaActivity : BaseActivity() {
         binding.accountButtonBack.setOnClickListener{onBackPressed()}
     }
 
-    fun mostrarDatosPersonales(adiccion: String, inicio: LocalDateTime) {
+    //Función que carga los datos propios del usuario a la pantalla
+    private fun mostrarDatosPersonales(adiccion: String, inicio: LocalDateTime) {
         binding.accountTextUsername.text = auth.currentUser?.email.toString()
         binding.accountTextAdic.text = "Actualmente me estoy limpiando de $adiccion"
         binding.accountTextDate.text = "Empecé con este reto el ${inicio.format(DateTimeFormatter.ofPattern("dd/MM/yy - HH:mm")).toString()}"

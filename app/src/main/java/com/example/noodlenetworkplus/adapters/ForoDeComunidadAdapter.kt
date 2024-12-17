@@ -26,11 +26,11 @@ class ForoDeComunidadAdapter: RecyclerView.Adapter<ForoDeComunidadAdapter.PostVi
 
     inner class PostViewHolder(private val binding: ItemCommunityPostBinding): RecyclerView.ViewHolder(binding.root) {
         fun binding(data: Publicacion){
-            binding.postTextAuthor.text = data.autor
-            binding.postTextDate.text = data.fechaDePublicacion
-            binding.postTextHour.text = data.horaDePublicacion
-            binding.postTextContent.text = data.contenido
-            binding.postImageCategory.setImageResource(data.imagen)
+            binding.postTextAuthor.text = data.autor                    //Autor de la publicación
+            binding.postTextDate.text = data.fechaDePublicacion         //Fecha en la que se hace la publicación
+            binding.postTextHour.text = data.horaDePublicacion          //Hora en la que se hace la publicación
+            binding.postTextContent.text = data.contenido               //Contenido principal de la publicación
+            binding.postImageCategory.setImageResource(data.imagen)     //Imagen relacionada a la categoría seleccionada
         }
     }
 

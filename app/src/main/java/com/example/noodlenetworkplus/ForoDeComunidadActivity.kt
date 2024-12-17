@@ -11,14 +11,14 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class ForoDeComunidadActivity : BaseActivity() {
-    private lateinit var binding: ActivityForoDeComunidadBinding
-    private val recyclerPostAdapter by lazy { ForoDeComunidadAdapter() }
-
     companion object{
         val gson = Gson()
         val ID_LIST_PUBLICACIONES = "LISTA_PUBLICACIONES"
         val ID_PUBLICACIONES = "PUBLICACIONES"
     }
+
+    private lateinit var binding: ActivityForoDeComunidadBinding
+    private val recyclerPostAdapter by lazy { ForoDeComunidadAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +45,8 @@ class ForoDeComunidadActivity : BaseActivity() {
         }
     }
 
-    fun setUpRecyclerView() {
+    //Función que carga todos los items del RecyclerView
+    private fun setUpRecyclerView() {
         recyclerPostAdapter.addDataToList(cargarPublicaciones())
         binding.communityRecyclerPosts.apply() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -53,7 +54,8 @@ class ForoDeComunidadActivity : BaseActivity() {
         }
     }
 
-    fun cargarPublicaciones(): MutableList<Publicacion> {
+    //Función que carga las publicaciones anteriores desde SharedPreferences
+    private fun cargarPublicaciones(): MutableList<Publicacion> {
         val json = this.getSharedPreferences(ID_LIST_PUBLICACIONES, Context.MODE_PRIVATE).getString(ID_PUBLICACIONES, null)
         val tipo = object : TypeToken<List<Publicacion>>() {}.type
         return if (json != null) gson.fromJson(json, tipo) else mutableListOf<Publicacion>()
