@@ -8,12 +8,14 @@ import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.ID_PUBLIC
 import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.gson
 import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ActivityAgregarPostBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.gson.reflect.TypeToken
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class AgregarPostActivity : BaseActivity() {
     private lateinit var binding: ActivityAgregarPostBinding
+    private lateinit var auth: FirebaseAuth
     private var categoria: Int = R.drawable.user
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,7 @@ class AgregarPostActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
+        auth = FirebaseAuth.getInstance()
         binding.postRadioGroup.setOnCheckedChangeListener { group, checkedID ->
             when(checkedID) {
                 R.id.post_radio_button_support -> {
@@ -39,10 +42,9 @@ class AgregarPostActivity : BaseActivity() {
             }
         }
         binding.postButtonAdd.setOnClickListener{
-            //TODO Aun es necesario agregar el nombre de usuario
             val contenido: String = binding.postEditText.text.toString()
             if (contenido.isNotEmpty()) {
-                agregarPublicacion("test", contenido)
+                agregarPublicacion(auth.currentUser?.email.toString(), contenido)
                 binding.postEditText.text.clear()
                 val intent = Intent(this, ForoDeComunidadActivity::class.java)
                 startActivity(intent)

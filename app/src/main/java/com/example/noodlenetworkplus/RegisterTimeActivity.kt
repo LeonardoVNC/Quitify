@@ -12,6 +12,7 @@ class RegisterTimeActivity : AppCompatActivity() {
     companion object {
         val APP_PREFERENCES = "app_preferences"
         val BEGIN_DATE = "begin_date"
+        val FIRST_DATE = "first_date"
     }
 
     private lateinit var binding: ActivityRegisterTimeBinding
@@ -36,6 +37,7 @@ class RegisterTimeActivity : AppCompatActivity() {
                 0
             )
             sharedPreferences.edit().putString(BEGIN_DATE, beginDate.toString()).apply()
+            sharedPreferences.edit().putString(FIRST_DATE, beginDate.toString()).apply()
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
