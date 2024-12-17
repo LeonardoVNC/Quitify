@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         registerTextView.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, IntroActivity::class.java)
             startActivity(intent)
         }
     }

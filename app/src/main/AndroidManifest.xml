@@ -39,9 +39,6 @@
             android:name=".ConfiguracionActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".SelectThemeActivity"
             android:exported="true" />
         <activity

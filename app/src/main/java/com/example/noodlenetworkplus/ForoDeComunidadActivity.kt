@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.noodlenetworkplus.adapters.ForoDeComunidadAdapter.ForoDeComunidadAdapter
+import com.example.noodlenetworkplus.adapters.ForoDeComunidadAdapter
 import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ActivityForoDeComunidadBinding
 import com.google.gson.Gson
@@ -12,7 +12,7 @@ import com.google.gson.reflect.TypeToken
 
 class ForoDeComunidadActivity : BaseActivity() {
     private lateinit var binding: ActivityForoDeComunidadBinding
-    private val recyclerPostAdapter by lazy {ForoDeComunidadAdapter()}
+    private val recyclerPostAdapter by lazy { ForoDeComunidadAdapter() }
 
     companion object{
         val gson = Gson()

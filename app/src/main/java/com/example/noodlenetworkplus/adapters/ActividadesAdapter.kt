@@ -1,11 +1,10 @@
-package com.example.noodlenetworkplus.adapter.ActividadesAdapter
+package com.example.noodlenetworkplus.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noodlenetworkplus.dataClasses.Actividad
-import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ItemRecomendationActBinding
 
 class ActividadesAdapter: RecyclerView.Adapter<ActividadesAdapter.ActividadViewHolder>(){

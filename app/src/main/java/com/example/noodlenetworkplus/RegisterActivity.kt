@@ -1,5 +1,6 @@
 package com.example.noodlenetworkplus
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -31,6 +32,8 @@ class RegisterActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, PrincipalActivity::class.java)
+                            startActivity(intent)
                             finish()
                         } else {
                             Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

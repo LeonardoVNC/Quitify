@@ -1,6 +1,5 @@
-package com.example.noodlenetworkplus
+package com.example.noodlenetworkplus.adapters
 
-import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.noodlenetworkplus.PrincipalActivity
+import com.example.noodlenetworkplus.R
+import com.example.noodlenetworkplus.RegisterActivity
+import com.example.noodlenetworkplus.dataClasses.Presentacion
 
 class ViewPagerAdapter(
     private val presentacionlist: List<Presentacion>,
@@ -54,7 +57,7 @@ class ViewPagerAdapter(
                 botonSiguiente.visibility = View.GONE
                 botonEmpezar.setOnClickListener {
                     itemView.context.startActivity(
-                        Intent(itemView.context, PrincipalActivity::class.java)
+                        Intent(itemView.context, RegisterActivity::class.java)
                     )
                 }
             } else {

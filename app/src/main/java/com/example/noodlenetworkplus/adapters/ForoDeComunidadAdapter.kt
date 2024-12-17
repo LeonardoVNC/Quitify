@@ -1,4 +1,4 @@
-package com.example.noodlenetworkplus.adapters.ForoDeComunidadAdapter
+package com.example.noodlenetworkplus.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

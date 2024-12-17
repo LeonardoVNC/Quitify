@@ -1,4 +1,4 @@
-package com.example.noodlenetworkplus
+package com.example.noodlenetworkplus.dataClasses
 
 data class Presentacion (
     val fondo: Int,
