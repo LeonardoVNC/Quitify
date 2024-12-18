@@ -49,6 +49,7 @@
 
     <string name="actTitle">Título de la actividad </string>
     <string name="actDesc">Descripción de la actividad </string>
+    <string name="actLink">Link </string>
 
     <string name="menAct">ACTIVIDADES</string>
     <string name="menDeporte">Deporte</string>

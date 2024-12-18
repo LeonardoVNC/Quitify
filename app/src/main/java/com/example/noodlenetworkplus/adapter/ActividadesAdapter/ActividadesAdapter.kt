@@ -1,6 +1,8 @@
 package com.example.noodlenetworkplus.adapter.ActividadesAdapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,13 +11,22 @@ import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ItemRecomendationActBinding
 
 class ActividadesAdapter: RecyclerView.Adapter<ActividadesAdapter.ActividadViewHolder>(){
-    private val datos = mutableListOf<Actividad>()
+    private val datos = mutableListOf<Actividad>()  //Creacion de una lista de datos de tipo Actividades(data class)
     private var context: Context?=null
 
     inner class ActividadViewHolder(private val binding: ItemRecomendationActBinding): RecyclerView.ViewHolder(binding.root) {
         fun binding(data: Actividad) {
             binding.actTitle.text = data.titulo
             binding.actDesc.text = data.descripcion
+            binding.actButtonLink.text = data.butontext
+            binding.actButtonLink.setOnClickListener{
+                if(!data.url.isNullOrEmpty()){
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(data.url))
+                    itemView.context.startActivity(intent)
+                }else{
+                    println("no hay enlace")
+                }
+            }
 
         }
     }
