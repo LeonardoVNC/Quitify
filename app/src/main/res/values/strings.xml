@@ -72,11 +72,15 @@
     <!-- Recomendaciones -->
     <string name="actTitle">Título de la actividad </string>
     <string name="actDesc">Descripción de la actividad </string>
+    <string name="actLink">Link </string>
     <string name="menAct">ACTIVIDADES</string>
     <string name="menDeporte">Deporte</string>
     <string name="menDibujo">Dibujo</string>
     <string name="menCocina">Cocina</string>
     <string name="menMusica">Musica</string>
+    <string name="menPoesia">Poesia</string>
+    <string name="menAprendizaje">Aprendizaje</string>
+    <string name="menVideojuegos">Videojuegos</string>
 
     <!-- Foro de comunidad -->
     <string name="postAuthor">AutorDeLaPublicación</string>
@@ -92,9 +96,6 @@
     <string name="newPostCatSad">Necesito desahogarme un poco</string>
     <string name="newPostCatOther">Otro</string>
 
-    <string name="actTitle">Título de la actividad </string>
-    <string name="actDesc">Descripción de la actividad </string>
-    <string name="actLink">Link </string>
     <!-- Configuraciones -->
     <string name="configAccount">Detalles de la cuenta</string>
     <string name="configTheme">Cambiar tema</string>
@@ -105,14 +106,6 @@
     <string name="closeAccountPositive">Aceptar</string>
     <string name="closeAccountNegative">Cancelar</string>
 
-    <string name="menAct">ACTIVIDADES</string>
-    <string name="menDeporte">Deporte</string>
-    <string name="menDibujo">Dibujo</string>
-    <string name="menCocina">Cocina</string>
-    <string name="menMusica">Musica</string>
-    <string name="menPoesia">Poesia</string>
-    <string name="menAprendizaje">Aprendizaje</string>
-    <string name="menVideojuegos">Videojuegos</string>
     <!-- Detalles de la Cuenta -->
     <string name="account_username">Username</string>
     <string name="account_adic">Me estoy limpiando de</string>
