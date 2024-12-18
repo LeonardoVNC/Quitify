@@ -7,9 +7,14 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
+    companion object {
+        val USERNAME = "username"
+    }
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +45,9 @@ class RegisterActivity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+                            val sharedPref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
                             with(sharedPref.edit()) {
-                                putString("username", username)
+                                putString(USERNAME, username)
                                 apply()
                             }
 
