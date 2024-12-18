@@ -2,12 +2,7 @@ package com.example.noodlenetworkplus
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.noodlenetworkplus.ActividadesActivity.Companion.ID_CATEGORIA
-import com.example.noodlenetworkplus.databinding.ActivityActividadesBinding
 import com.example.noodlenetworkplus.databinding.ActivityMenuActividadesBinding
 
 class MenuActividadesActivity : BaseActivity() {
