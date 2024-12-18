@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="fill_vertical"
     android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="fill_vertical"
     tools:context=".PrincipalActivity">
 
     <!-- Menú superior -->
@@ -14,50 +14,122 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorSecondary"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageButton
             android:id="@+id/account_button_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/arrow_back"
             android:backgroundTint="@android:color/transparent"
-            app:tint="?attr/editTextColor"
+            android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/editTextColor" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Contenido Principal -->
-    <LinearLayout
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintTop_toBottomOf="@id/account_upper_menu">
-        <TextView
-            android:id="@+id/account_text_username"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="20dp"
-            style="@style/SubtitleText"
-            android:text="@string/accountUsername"/>
-        <TextView
-            android:id="@+id/account_text_adic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="20dp"
-            style="@style/SubtitleText"
-            android:textStyle="italic"
-            android:text="@string/accountAdic"/>
-        <TextView
-            android:id="@+id/account_text_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="20dp"
-            style="@style/SubtitleText"
-            android:textStyle="italic"
-            android:text="@string/accountDate"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_marginVertical="8dp"
+            android:background="?attr/colorSurface"
+            android:padding="10dp">
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/account_text_username"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_username"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/account_image_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/account_text_username" />
+
+            <!-- Texto descripción de la adicción -->
+            <TextView
+                android:id="@+id/account_text_adic_desc"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_adic"
+                app:layout_constraintTop_toBottomOf="@id/account_image_logo" />
+            <TextView
+                android:id="@+id/account_text_adic"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_adic"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/account_text_adic_desc" />
+
+            <!-- Texto descripción de la fecha de inicio total -->
+            <TextView
+                android:id="@+id/account_text_begin_desc"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_begin"
+                app:layout_constraintTop_toBottomOf="@id/account_text_adic" />
+            <TextView
+                android:id="@+id/account_text_begin"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_begin"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/account_text_begin_desc" />
+
+            <!-- Texto descripción de la fecha de inicio actual -->
+            <TextView
+                android:id="@+id/account_text_date_desc"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_date"
+                app:layout_constraintTop_toBottomOf="@id/account_text_begin" />
+            <TextView
+                android:id="@+id/account_text_date"
+                style="@style/SubtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/account_date"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/account_text_date_desc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

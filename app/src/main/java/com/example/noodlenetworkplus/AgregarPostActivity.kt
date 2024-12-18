@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.ID_LIST_PUBLICACIONES
 import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.ID_PUBLICACIONES
 import com.example.noodlenetworkplus.ForoDeComunidadActivity.Companion.gson
+import com.example.noodlenetworkplus.RegisterActivity.Companion.USERNAME
+import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.APP_PREFERENCES
 import com.example.noodlenetworkplus.dataClasses.Publicacion
 import com.example.noodlenetworkplus.databinding.ActivityAgregarPostBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +25,9 @@ class AgregarPostActivity : BaseActivity() {
         binding = ActivityAgregarPostBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        val sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+        val usernameString = sharedPreferences.getString(USERNAME, "Usuario").toString()
 
         auth = FirebaseAuth.getInstance()
         //Establece la categoría del nuevo post
@@ -42,10 +47,11 @@ class AgregarPostActivity : BaseActivity() {
                 }
             }
         }
+
         binding.postButtonAdd.setOnClickListener{
             val contenido: String = binding.postEditText.text.toString()                //Guardamos el contenido del editText
             if (contenido.isNotEmpty()) {                                               //Si el contenido no está vacío
-                agregarPublicacion(auth.currentUser?.email.toString(), contenido)       //Se agrega la publicación
+                agregarPublicacion(usernameString, contenido)       //Se agrega la publicación
                 binding.postEditText.text.clear()                                       //Y se limpia el contenido de editText
                 val intent = Intent(this, ForoDeComunidadActivity::class.java)
                 startActivity(intent)

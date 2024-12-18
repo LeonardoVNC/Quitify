@@ -103,9 +103,10 @@
     <string name="closeAccountNegative">Cancelar</string>
 
     <!-- Detalles de la Cuenta -->
-    <string name="accountUsername">Username</string>
-    <string name="accountAdic">Adicción</string>
-    <string name="accountDate">17/04/24</string>
+    <string name="account_username">Username</string>
+    <string name="account_adic">Me estoy limpiando de</string>
+    <string name="account_begin">Empecé con este reto el</string>
+    <string name="account_date">Mi última racha data del</string>
 
     <!-- Selector de temas -->
     <string name="desc_themes">Seleccione un tema:</string>
