@@ -12,7 +12,6 @@ import com.example.noodlenetworkplus.RegisterTimeActivity.Companion.BEGIN_DATE
 import com.example.noodlenetworkplus.databinding.ActivityPrincipalBinding
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
-import java.util.Random
 
 class PrincipalActivity : BaseActivity() {
     private lateinit var binding: ActivityPrincipalBinding
