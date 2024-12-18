@@ -8,6 +8,7 @@
     android:background="@drawable/gradient_background"
     android:padding="16dp">
 
+    <!-- Imagen principal de la pantalla de presentación -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="260dp"
@@ -21,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+    <!-- Título de la pantalla -->
     <TextView
         android:id="@+id/textView_titulo"
         android:layout_width="match_parent"
@@ -37,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <!-- Descripción o subtítulo de la pantalla -->
     <TextView
         android:id="@+id/textView_descripcion"
         android:layout_height="wrap_content"
@@ -52,6 +55,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_titulo" />
+
+    <!-- Botón oculto de "Empezar" -->
     <Button
         android:id="@+id/button_empezar"
         android:layout_width="wrap_content"
@@ -63,6 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Botón "Siguiente" visible al usuario -->
     <Button
         android:id="@+id/button_siguiente"
         android:layout_width="wrap_content"
@@ -71,8 +77,6 @@
         android:textColor="@android:color/white"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-         />
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

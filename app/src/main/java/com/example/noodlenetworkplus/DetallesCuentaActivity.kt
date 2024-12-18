@@ -30,8 +30,6 @@ class DetallesCuentaActivity : BaseActivity() {
 
         binding.accountButtonBack.setOnClickListener{onBackPressed()}
 
-        mostrarDatosPersonales()
-        binding.accountButtonBack.setOnClickListener { onBackPressed() }
     }
 
     //Función que carga los datos propios del usuario a la pantalla
