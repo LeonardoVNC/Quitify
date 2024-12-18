@@ -99,14 +99,10 @@
     <string name="newPostCatSad">Necesito desahogarme un poco</string>
     <string name="newPostCatOther">Otro</string>
 
-    <string name="actTitle">Título de la actividad </string>
-    <string name="actDesc">Descripción de la actividad </string>
-    <string name="actLink">Link </string>
     <!-- Configuraciones -->
     <string name="configAccount">Detalles de la cuenta</string>
     <string name="configTheme">Cambiar tema</string>
     <string name="configCloseAccount">Cerrar sesión</string>
-
     <!-- Cerrar sesión -->
     <string name="closeAccountTitle">Cerrar sesión</string>
     <string name="closeAccountContent">¿Estás seguro que quieres cerrar sesión?</string>
