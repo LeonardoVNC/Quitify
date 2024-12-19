@@ -3,6 +3,7 @@ package com.example.noodlenetworkplus
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noodlenetworkplus.databinding.ActivityRegisterTimeBinding
 import java.time.LocalDateTime
@@ -35,10 +36,14 @@ class RegisterTimeActivity : AppCompatActivity() {
                 binding.regtimeTimepicker.minute,
                 0
             )
-            sharedPreferences.edit().putString(BEGIN_DATE, beginDate.toString()).apply()    //Guarda la última fecha de inicio
-            sharedPreferences.edit().putString(FIRST_DATE, beginDate.toString()).apply()    //Guarda la primera fecha de inicio
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            if (!beginDate.isAfter(LocalDateTime.now())) {
+                sharedPreferences.edit().putString(BEGIN_DATE, beginDate.toString()).apply()    //Guarda la última fecha de inicio
+                sharedPreferences.edit().putString(FIRST_DATE, beginDate.toString()).apply()    //Guarda la primera fecha de inicio
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Ingresa una fecha y hora anterior o igual al día de hoy", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
